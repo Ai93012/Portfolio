@@ -35,7 +35,7 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">로그인</h4>
 											<div class="form-group">
-												<input type="email" name="logemail" class="form-style" placeholder="아이디를 입력해주세요." id="logemail" autocomplete="off">
+												<input type="email" name="logemail" class="form-style" placeholder="아이디를 입력해주세요." id="logid" autocomplete="off">
 												<i class="input-icon uil uil-user-circle"></i>
 											</div>	
 											<div class="form-group mt-2">
@@ -56,7 +56,7 @@
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="email" name="logemail" class="form-style" placeholder="아이디" id="logemail" autocomplete="off">
+												<input type="email" name="logemail" class="form-style" placeholder="아이디" id="logid" autocomplete="off">
 												<i class="input-icon uil uil-user-circle"></i>
 											</div>	
 											<div class="form-group mt-2">
@@ -64,11 +64,11 @@
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="주소" id="logpass" autocomplete="off">
+												<input type="password" name="logpass" class="form-style" placeholder="주소" id="logaddress" autocomplete="off">
 												<i class="input-icon uil uil-home"></i>
 											</div>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="이메일" id="logpass" autocomplete="off">
+												<input type="password" name="logpass" class="form-style" placeholder="이메일" id="logemail" autocomplete="off">
 												<i class="input-icon uil uil-at"></i>
 											</div>
 											<a href="#" class="btn mt-4">회원가입</a>
