@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
 <link rel="stylesheet" href="/resources/dist/css/style.css">
-<title>문의사항 페이지</title>
+<title>푸드스토리</title>
 </head>
 <body>
 	<div id="wrap" align="center">
-		<h6>문의사항</h6>
+		<h6>푸드스토리</h6>
 		<table class="list">
 		<c:set var="paging" value="${listModel.paging}" />
 		<c:if test="${paging.numberOfRecords > 0}">
@@ -51,13 +51,13 @@
 			<tr>
 				<td colspan="5" style="text-align: center">
 					<c:if test="${paging.startPageNo > paging.sizeOfPage}">
-						<c class="page-button" href="<c:url value="/board/qna.do?&p=${paging.prevPageNo}"/>">이전</c>
+						<c class="page-button" href="<c:url value="/board/foodstory.do?&p=${paging.prevPageNo}"/>">이전</c>
 					</c:if>
 					<c:forEach var="pno" begin="${paging.startPageNo}" end="${paging.endPageNo}">
-						<c class="page-button" href="<c:url value="/board/qna.do?&p=${pno}" />">[${pno}]</c>
+						<c class="page-button" href="<c:url value="/board/foodstory.do?&p=${pno}" />">[${pno}]</c>
 					</c:forEach>
 					<c:if test="${paging.endPageNo < paging.finalPageNo}">
-						<c class="page-button" href="<c:url value="/board/qna.do?&p=${paging.nextPageNo}"/>">다음</c>
+						<c class="page-button" href="<c:url value="/board/foodstory.do?&p=${paging.nextPageNo}"/>">다음</c>
 					</c:if>
 				</td>
 			</tr>
