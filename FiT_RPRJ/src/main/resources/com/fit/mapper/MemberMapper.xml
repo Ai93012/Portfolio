@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.fit.mapper.MemberMapper">
+  
+  <!-- 회원가입 -->
+	<insert id="memberJoin">
+  		insert into member values(#{userName}, #{userId}, #{userPass}, #{address1}, #{address2}, #{userMail}, sysdate, 0, #{address3})
+  	</insert>
+
+  <!-- 로그인 -->
+  <select id="memberLogin" resultType="com.fit.model.MemberVO">
+	<!--  select  userName, userId, userPass, address1, address2, userMail
+	from member where userId= #{userId} and userPass = #{userPass}-->
+	select userId, userPass, adminCK, userName, userMail
+	from member where userId = #{userId} and userPass = #{userPass}
+  </select>  
+  
+  
+ <!-- 아이디 중복검사 -->
+ 	<select id="idCheck" resultType="int">
+ 	
+ 		select count(*) from member where userId = #{userId}
+ 		
+ 	</select>
+ 	
+ 	<!-- 패스워드 체크 -->
+ 	<select id="passCheck" resultType="int">
+ 		SELECT COUNT(*) FROM MEMBER
+ 		WHERE USERID = #{userId}
+ 		 AND USERPASS = #{userPass}
+ 	</select>
+ 	
+ 	
+ 	
+ 	<!-- 회원탈퇴 -->
+ 	  <delete id ="memberDelete">
+ 		DELETE FROM MEMBER
+ 		WHERE USERID = #{userId}
+ 		AND USERPASS = #{userPass} 
+ 	</delete>
+ 	
+ 
+ 	<!-- 회원정보 수정 -->
+ 	<update id ="memberUpdate">
+ 		UPDATE MEMBER
+ 		USERPASS = #{userPass},
+ 		USERNAME = #{userName},
+ 		USERMAIL = #{userMail}
+ 		WHERE USERID = #{userId} 	
+ 	</update>
+ 	
+ 	
+ 	
+ 	
+
+
+  </mapper>
