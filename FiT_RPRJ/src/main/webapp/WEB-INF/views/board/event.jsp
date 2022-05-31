@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트 글 작성 페이지</title>
+<title>EVENT</title>
 </head>
 <body>
 
-<h1>이벤트 글 작성 페이지</h1>
+<h1>Event</h1>
 
 </body>
 </html>
