@@ -14,6 +14,6 @@
 <span><a href="/main">main</a></span>
 <span><a href="/member/loginForm">login</a></span>
 <span><a href="/myPage">myPage</a></span>
-<span><a href="/board/notice">board</a></span>
+<span><a href="/board/boardMain">board</a></span>
 </body>
 </html>

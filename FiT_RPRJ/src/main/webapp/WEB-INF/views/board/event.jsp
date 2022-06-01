@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>EVENT</title>
+<title>EVENT 상세보기</title>
 </head>
 <body>
 
-<h1>Event</h1>
+<h1>Event 상세보기</h1>
 
 </body>
 </html>

@@ -16,12 +16,13 @@ public interface MemberService {
 	//비밀번호 중복 검사
    public int passCheck(String userPass) throws Exception;
 	
-	
-	//회원정보 수정
-	public void memberUpdate(MemberVO member) throws Exception;
+   
+   //회원수정
+   public MemberVO memberUpdate(MemberVO member);
+   
 	
 	//회원탈퇴
-	public int memberDelete(int memberId);
+	/* public void memberDelete(MemberVO member);*/
 	
 	
 	

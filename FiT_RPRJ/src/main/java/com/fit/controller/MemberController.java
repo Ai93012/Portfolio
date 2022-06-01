@@ -152,38 +152,8 @@ public class MemberController {
 			
 		}
 		
-		//회원정보 페이지로 이동
-				@RequestMapping(value = "profile", method = RequestMethod.GET)
-				public void proGET() {
-					
-					logger.info("회원정보페이지로 이동");
-					
-				}
-				
-				
-				//회원수정
-				@RequestMapping(value="profile", method=RequestMethod.POST)
-				
-				public String memberUpdatePOST(MemberVO member) throws Exception{
-					
-					logger.info("회원 수정 진입");
-					
-					//회원가입 서비스 실행
-					memberservice.memberUpdate(member);
-					
-					logger.info("회원 수정 성공");
-					
-					return "redirect:/update";
-					
-				}
 		
-				//회원정보수정완료 페이지로 이동
-				@RequestMapping(value = "update", method = RequestMethod.GET)
-				public void updateSGET() {
-					
-					logger.info("회원정보페이지 수정 완료로 이동");
-					
-				}
+				
 				
 				
 		

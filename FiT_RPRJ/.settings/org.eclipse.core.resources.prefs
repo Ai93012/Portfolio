@@ -5,4 +5,6 @@ encoding//src/main/java/com/fit/mapper/MemberMapper.java=UTF-8
 encoding//src/main/java/com/fit/model/MemberVO.java=UTF-8
 encoding//src/main/java/com/fit/service/MemberService.java=UTF-8
 encoding//src/test/java/com/fit/mapper/AddMemDelTests.java=UTF-8
+encoding//src/test/java/com/fit/mapper/BoardMapperTests.java=UTF-8
+encoding//src/test/java/com/fit/mapper/BoardServiceTests.java=UTF-8
 encoding//src/test/java/com/fit/mapper/MemberMapperTests.java=UTF-8

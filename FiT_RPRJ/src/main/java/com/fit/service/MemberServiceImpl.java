@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 import com.fit.mapper.MemberMapper;
 import com.fit.model.MemberVO;
 
+import lombok.extern.log4j.Log4j;
+
 @Service
+@Log4j
 public class MemberServiceImpl implements MemberService{
 
 	@Autowired
@@ -45,17 +48,22 @@ public class MemberServiceImpl implements MemberService{
 		return membermapper.memberLogin(member);
 	}
 	
-	/* 회원 정보 수정*/
+	/* 회원 수정 */
 	@Override
-	public void memberUpdate(MemberVO member) throws Exception {
-		membermapper.memberUpdate(member);
+	public MemberVO memberUpdate(MemberVO member) {
+		
+		return membermapper.memberUpdate(member);
 	}
 	
+	
+	
+
 	/* 회원 탈퇴*/
-	@Override
-	public int memberDelete(int memberId) {
-		return membermapper.memberDelete(memberId);
+	/*@Override
+	public int memberDelete(MemberVO member) {
+		return membermapper.memberDelete(member);
 		
 	}
+	*/
 	
 }

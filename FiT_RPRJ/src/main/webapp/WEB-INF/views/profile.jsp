@@ -25,10 +25,10 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <div align="center"><font size=5>회원정보 수정</font></div> <br>
 <div align="center">
 <br><br>
-	<form action="/memberUpdate" method="post">
+	<form id="modifyForm" action="/profile" method="post">
 	<table border=1 width=430>
 	
-	
+	  
 			<tr>
 				<td  align=center class="userId">아이디 </td>
 				<td>  ${member.userId }  </td>
@@ -66,9 +66,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 				<tr>
 			
 		</tr>
-		<td colspan=2  align=center>
-				<div class="modify-wrap">
-			  <input class="modify-button" type="submit" id="submit" value = "수정"/>
+		<td colspan=2  align=center> 
+        <a class="btn" id="modify_btn">수정 완료</a>
+        <a class="btn" id="cancel_btn">수정 취소</a>
 					</div>
 					
 					
@@ -85,3 +85,29 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	</div>
 	</section>
 	
+	
+	<script>
+	 let form = $("#infoForm");        // 페이지 이동 form(리스트 페이지 이동, 조회 페이지 이동)
+	    let mForm = $("#modifyForm");    // 페이지 데이터 수정 from
+	    
+	 
+	    
+	    /* 수정 하기 버튼 */
+	    $("#modify_btn").on("click", function(e){
+	        mForm.submit();
+	    });
+	    
+	    /* 취소 버튼 */
+	    $("#cancel_btn").on("click", function(e){
+	        form.attr("action", "/board/get");
+	        form.submit();
+	    });    
+	    
+	 
+	    
+	    
+	    
+	</script>
+</body>
+
+</html>

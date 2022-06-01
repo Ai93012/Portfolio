@@ -17,7 +17,7 @@
 주문하신 상품 조회내역을 확인할 수 있습니다.
 
 <hr>
-<button type="button"><a href="member/profile">회원정보</a></button>
+<button type="button"><a href="/profile">회원정보</a></button>
 개인정보를 관리하는 곳입니다.
 
 <hr>

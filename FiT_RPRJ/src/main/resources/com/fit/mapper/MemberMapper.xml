@@ -45,6 +45,7 @@
  	<!-- 회원정보 수정 -->
  	<update id ="memberUpdate">
  		UPDATE MEMBER
+ 		SET
  		USERPASS = #{userPass},
  		USERNAME = #{userName},
  		USERMAIL = #{userMail}

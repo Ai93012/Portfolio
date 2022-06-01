@@ -32,7 +32,7 @@ div.d2{
 <header>
 <!-- align="center" -->
 	<div id="logo_wrap" align="center">
-		<a href="logo"><img src="/resources/images/logo.png" width="180px" height="150px"></a>
+		<a href="/main"><img src="/resources/images/logo.png" width="180px" height="150px"></a>
 	</div>
 	<div id="submenu">
 		<ul>
@@ -59,7 +59,7 @@ div.d2{
 			</h3>
 			<h4>
 				<div class="d1">
-					<a href="#"><img src="/resources/images/order.png" width="50px" height="50px"></a><br>
+					<a href="/cart/cartView"><img src="/resources/images/order.png" width="50px" height="50px"></a><br>
 					<span>주문조회</span>
 				</div>
 			</h4>
