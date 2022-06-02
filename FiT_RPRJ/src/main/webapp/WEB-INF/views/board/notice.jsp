@@ -30,9 +30,9 @@
 		</table>
 		<br><br>
     <div class="modify-button_wrap">
-				<b class="modify-button" id="modify_btn">수정 </b> &nbsp; &nbsp;
-				<b class="modify-button" id="delete_btn">삭제</b> &nbsp; &nbsp;
-				<b class="modify-button" id="list_btn">목록 페이지</b>
+				<b class="btn" id="modify_btn">수정 </b> &nbsp; &nbsp;
+				<b class="btn" id="delete_btn">삭제</b> &nbsp; &nbsp;
+				<b class="btn" id="list_btn">목록 페이지</b>
     </div>
 	  <form id="infoForm" action="/board/modify" method="get">
 		<input type="hidden" id="nBno" name="nBno" value='<c:out value="${pageInfo.nBno}"/>'>
@@ -42,18 +42,18 @@
 <script>
 	let form = $("#infoForm");
 	
-	$("#list_modify-button").on("click", function(e){
+	$("#list_btn").on("click", function(e){
 		form.find("#nBno").remove();
 		form.attr("action", "/board/noticeList");
 		form.submit();
 	});
 	
-	$("#modify_modify-button").on("click", function(e){
+	$("#modify_btn").on("click", function(e){
 		form.attr("action", "/board/noticeMod");
 		form.submit();
 	});	
 	
-	$("#delete_modify-button").on("click", function(e){
+	$("#delete_btn").on("click", function(e){
 		form.attr("action", "/board/deleteN");
 		form.attr("method", "post");
 		form.submit();
