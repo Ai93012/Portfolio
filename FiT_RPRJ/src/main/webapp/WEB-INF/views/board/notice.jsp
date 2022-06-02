@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>푸드스토리 : "${board.title}"</title>
+<title>공지사항 : "${board.title}"</title>
 </head>
 <body>
 	<div id="wrap" align="center">
