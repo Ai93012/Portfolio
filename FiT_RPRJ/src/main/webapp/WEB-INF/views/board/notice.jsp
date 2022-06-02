@@ -25,11 +25,11 @@
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
-					padding: 30px 5px 20px;"><pre>${pageInfo.nContent}</pre></td>
+					padding: 35px 5px 25px;"><pre>${pageInfo.nContent}</pre></td>
 			</tr>
 		</table>
 		<br><br>
-    <div class="modify-button_wrap">
+    <div class="btn_wrap">
 				<b class="btn" id="modify_btn">수정 </b> &nbsp; &nbsp;
 				<b class="btn" id="delete_btn">삭제</b> &nbsp; &nbsp;
 				<b class="btn" id="list_btn">목록 페이지</b>
