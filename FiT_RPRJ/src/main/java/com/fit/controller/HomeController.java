@@ -1,38 +1,52 @@
 package com.fit.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.fit.model.Criteria;
+import com.fit.model.EventVO;
+import com.fit.model.PageDTO;
+import com.fit.service.EventService;
+import com.fit.service.ProductService;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
 /**
  * Handles requests for the application home page.
  */
+
 @Controller
+@Log4j
+@AllArgsConstructor
 public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	private ProductService service;
+	private EventService eventService;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(Criteria cri, Model model) {
+		log.info("Welcome home!");
+		// 주간베스트상품을 가져온다.
+		model.addAttribute("list", service.getList(cri)); 
+		int total = service.getTotal(cri);
+		log.info("total: " + total);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		// 최근에 등록된 이벤트 목록 3개 가져오기
+//		List<EventVO> eventList = eventService.getMainEvent();
+//		model.addAttribute("eventList", eventList);
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+		cri = new Criteria(1, 3);
+		List<EventVO> eventList = eventService.getList(cri);
+		model.addAttribute("eventList", eventList);
+
 		return "home";
 	}
 	

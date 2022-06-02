@@ -1,0 +1,17 @@
+@charset "UTF-8";
+header {
+	width: 1440px;
+	margin: 0 auto;
+}
+#wrapper section {
+	clear: both;
+}
+#eventWrap ul {
+	list-style-type: none;
+	height: 300px;
+}
+#eventWrap ul li {
+	float: left;
+	margin-left: 10px;
+	width: 30%;
+}

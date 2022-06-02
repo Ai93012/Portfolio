@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Java Code의 인터페이스와 같은 경로와 이름을 namespace에 기술한다. -->
+<mapper namespace="com.fit.mapper.EventMapper">
+<select id="getListWithPaging2"
+	resultType="com.fit.model.EventVO">
+	select /*+ index_desc(event pk_event) */
+	*
+	from event
+	offset (#{pageNum} - 1) * #{amount} rows fetch next #{amount} rows only
+</select>
+
+<select id="getTotalCount" resultType="int">
+	select count(*) from event where bno > 0
+</select>
+
+<insert id="insertSelectKey">
+insert into event (title, content, aid) 
+values(#{title}, #{content}, #{aid})
+<selectKey keyProperty="bno" order="AFTER" resultType="long">
+select ISEQ$$_77415.currval from dual  
+ </selectKey>
+</insert>
+
+<select id="getMainEvent" resultType="com.fit.model.EventVO">
+	select /*+ index_desc(event pk_event) */
+	*
+	from event
+	offset 0 rows fetch next 3 rows only
+</select>
+
+<select id="read" resultType="com.fit.model.EventVO">
+	select * from event where bno = #{bno}
+</select>
+</mapper>
