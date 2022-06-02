@@ -21,11 +21,11 @@
 			</tr>
 			<tr>
 				<td style="border-bottom: #111111 solid 1px;
-	padding: 5px 5px 15px;">${board.writeDate} &nbsp; 조회수 ${board.readCount} &nbsp; 작성자 ${pageInfo.aId}</td>
+	padding: 5px 5px 25px;">${board.writeDate} &nbsp; 조회수 ${board.readCount} &nbsp; 작성자 ${pageInfo.aId}</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
-					padding: 15px 5px 10px;"><pre>${pageInfo.nContent}</pre></td>
+					padding: 20px 5px 15px;"><pre>${pageInfo.nContent}</pre></td>
 			</tr>
 		</table>
 		<br><br>
