@@ -20,30 +20,15 @@ table {
 	line-height: 24px;
 }
 
-table td {
-	border-bottom: #333333 solid 1px;
-	padding: 5px;
-}
-
 table th {
 	border-top: #000000 solid 1px;
-  border-bottom: #111111 solid 1px;
-	padding: 5px;
+	padding: 25px 5px 5px;
 }
 
 th {
   text-align: left;
-	font-weight: 500;
-}
-
-a {
-	text-decoration: none;
-	color: #000000;
-}
-
-a:HOVER {
-	text-decoration: underline;
-	color: #000000;
+	font-weight: 600;
+	font-size: 20px;
 }
 
 .modify-button{
