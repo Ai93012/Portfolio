@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
-					padding: 20px 5px 15px;"><pre>${pageInfo.nContent}</pre></td>
+					padding: 25px 5px 15px;"><pre>${pageInfo.nContent}</pre></td>
 			</tr>
 		</table>
 		<br><br>
