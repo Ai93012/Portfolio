@@ -10,64 +10,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 목록 페이지</title>
-<!-- web font -->
+<title>공지사항 글 작성</title>
+<h1>공지사항 글 작성</h1>
+  <hr style="width: 70%">
+  <br>
+<form action="/board/noticeReg" method="POST">
+	<div class="input_wrap" align=center>
+		<label>제목</label>
+    <br>
+		<input name="nTitle">
+	</div>
+  <br>
+	<div class="input_wrap" align=center>
+		<label>내용</label>
+    <br>
+		<textarea rows="30" cols="100" name="nContent"></textarea>
+	</div>
+  <br>
+	<div class="input_wrap" align=center>
+		<label>작성자</label>
+    <br>
+		<input name="aId">
+	
+	</div>
+  <br>
+  <div class="btn_wrap" align=center>
+	<div class="btn" href="#">등록</div>
+
+</form>
 
 </head>
 <body>
 
-<h1>Notice</h1>
-	<div id="wrap" align="center">
-		<h6>NOTICE</h6>
-		<table class="list">
-		<c:set var="paging" value="${listModel.paging}" />
-		<c:if test="${paging.numberOfRecords > 0}">
-		</c:if>
-			<tr>
-				<td colspan="5" style="border: white; text-align: right">
-				<b class="modify-button" href="/board/noticeReg">게시글 등록</b></td>
-			</tr>
-			<tr>
-				<th>#번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>작성일</th>
-				<th>수정일</th>
-			</tr>
-	<c:choose>
-		<c:when test="${paging.numberOfRecords == 0}">
-			<tr>
-				<td colspan="5">
-					게시글이 없습니다.
-				</td>
-			</tr>
-		</c:when>
-		<c:otherwise>
-		<c:forEach var="board" items="${listModel.boardList}">
-			<tr class="record">
-				<td>${board.num}</td>
-				<td><a href="view.do?num=${board.num}">${board.title}</a></td>
-				<td>${board.name}</td>
-				<td><fmt:formatDate value="${board.writeDate}" /></td>
-				<td>${board.readCount}</td>
-			</tr>
-		</c:forEach>
-			<tr>
-				<td colspan="5" style="text-align: center">
-					<c:if test="${paging.startPageNo > paging.sizeOfPage}">
-						<a href="<c:url value="/board/qna.do?&p=${paging.prevPageNo}"/>">이전</a>
-					</c:if>
-					<c:forEach var="pno" begin="${paging.startPageNo}" end="${paging.endPageNo}">
-						<a href="<c:url value="/board/qna.do?&p=${pno}" />">[${pno}]</a>
-					</c:forEach>
-					<c:if test="${paging.endPageNo < paging.finalPageNo}">
-						<a href="<c:url value="/board/qna.do?&p=${paging.nextPageNo}"/>">다음</a>
-					</c:if>
-				</td>
-			</tr>
-		</c:otherwise>
-	</c:choose>
-		</table>
-	</div>
 </body>
 </html>
