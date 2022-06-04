@@ -43,7 +43,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	</div>
   <br><br><br>
 	<div class="btn_wrap" align=center>
-		<a class="btn" id="list_btn">목록 페이지</a>
 		<a class="btn" id="modify_btn">수정 완료</a>
 		<a class="btn" id="cancel_btn">수정 취소</a>
 		<a class="btn" id="delete_btn">삭제</a>
