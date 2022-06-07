@@ -7,14 +7,17 @@ import org.springframework.stereotype.Service;
 import com.fit.mapper.MemberMapper;
 import com.fit.model.MemberVO;
 
+import lombok.extern.log4j.Log4j;
+
 @Service
+@Log4j
 public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	private MemberMapper membermapper;
 
 	
-	/* È¸¿ø°¡ÀÔ */
+	/* È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 	@Override
 	public void memberJoin(MemberVO member) throws Exception {
 		
@@ -22,14 +25,14 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 	
-	/* ¾ÆÀÌµğ Áßº¹ È®ÀÎ */
+	/* ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ È®ï¿½ï¿½ */
 	@Override
 	public int idCheck(String userId) throws Exception {
 		
 		return membermapper.idCheck(userId);
 	}
 	
-	/* ºñ¹Ğ¹øÈ£ Áßº¹ È®ÀÎ */
+	/* ï¿½ï¿½Ğ¹ï¿½È£ ï¿½ßºï¿½ È®ï¿½ï¿½ */
 	@Override
 	public int passCheck(String userPass) throws Exception {
 		
@@ -39,23 +42,37 @@ public class MemberServiceImpl implements MemberService{
 	
 	
 	
-	/* ·Î±×ÀÎ */
+	/* ï¿½Î±ï¿½ï¿½ï¿½ */
 	@Override
 	public MemberVO memberLogin(MemberVO member) throws Exception {
 		return membermapper.memberLogin(member);
 	}
 	
-	/* È¸¿ø Á¤º¸ ¼öÁ¤*/
+	
+	/* È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+	
+	
 	@Override
-	public void memberUpdate(MemberVO member) throws Exception {
+	public void memberUpdate(MemberVO member) {
 		membermapper.memberUpdate(member);
 	}
 	
-	/* È¸¿ø Å»Åğ*/
+	
+	/*íšŒì› íƒˆí‡´*/
 	@Override
-	public int memberDelete(int memberId) {
-		return membermapper.memberDelete(memberId);
+	public void memberDelete(MemberVO member) {
+		membermapper.memberDelete(member);
+	}
+	
+	
+	
+
+	/* È¸ï¿½ï¿½ Å»ï¿½ï¿½*/
+	/*@Override
+	public int memberDelete(MemberVO member) {
+		return membermapper.memberDelete(member);
 		
 	}
+	*/
 	
 }
