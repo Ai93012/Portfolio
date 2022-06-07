@@ -1,5 +1,8 @@
 package com.fit.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,9 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fit.mapper.MemberMapper;
 import com.fit.model.MemAddressVO;
 import com.fit.model.MemberVO;
 import com.fit.service.MemDelService;
@@ -25,35 +30,36 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping(value = "/")
+@Log4j
 public class PageController {
 	private static final Logger logger = LoggerFactory.getLogger(PageController.class);
 	
 
 		
 		
-		//¸¶ÀÌÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "myPage", method = RequestMethod.GET)
 		public void myPgGET() {
 			
-			logger.info("¸¶ÀÌÆäÀÌÁö·Î ÀÌµ¿");
+			logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 			
 		}
 		
 	
 		
-		//¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£ Ã£±â ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½Ìµï¿½, ï¿½ï¿½Ğ¹ï¿½È£ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "userSearch", method = RequestMethod.GET)
 		public void findIdGET() {
 			
-			logger.info("¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£ Ã£±â ÆäÀÌÁö·Î ÀÌµ¿");
+			logger.info("ï¿½ï¿½ï¿½Ìµï¿½, ï¿½ï¿½Ğ¹ï¿½È£ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 			
 		}
 		
-		//¹è¼ÛÁö °ü¸® ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "dest", method = RequestMethod.GET)
 		public void viewAddDelGET() {
 					
-			logger.info("¹è¼ÛÁö °ü¸® ÆäÀÌÁö·Î ÀÌµ¿");
+			logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 		
 
 		}
@@ -61,16 +67,16 @@ public class PageController {
 		@Autowired
 		private MemDelService memdelservice;
 		
-		//¹è¼ÛÁö µî·Ï
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		@RequestMapping(value="/dest", method=RequestMethod.POST)
 		public String AddDelPOST(MemAddressVO memad) throws Exception{
 			
-			logger.info("dest ÁøÀÔ");
+			logger.info("dest ï¿½ï¿½ï¿½ï¿½");
 
 			
-			//¹è¼ÛÁö µî·Ï ½ÇÇà
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			memdelservice.addMemDel(memad);
-			logger.info("µî·Ï ¼º°ø");
+			logger.info("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			return "redirect:/dest";
 			
 			
@@ -79,19 +85,63 @@ public class PageController {
 		
 		
 
-		
-		
-		//È¸¿øÅ»Åğ
-		@RequestMapping(value="memberDelete", method=RequestMethod.GET)
-		
-		public String memberDeleteGET(MemberVO member) throws Exception{
+		//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+		@RequestMapping(value = "update", method = RequestMethod.GET)
+		public void updateSGET() {
 			
-			logger.info("È¸¿øÅ»Åğ ÁøÀÔ");
-			
-		return "/memberDelete";	
+			logger.info("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½Ìµï¿½");
 			
 		}
+		
+		
+		
+		//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+		
+		
+		@GetMapping("/profile")
+		public void proGET(MemberVO member, Model model) {
 			
+			model.addAttribute("userInfo");
+		}
+		
+		
+		
+		@Autowired
+		private MemberService service;
+		
+	    
+	    @PostMapping("/memberUpdate")
+	    public String userModifyPOST(MemberVO member, RedirectAttributes rttr) {
+	    	service.memberUpdate(member);
+	    	rttr.addFlashAttribute("result", "modify success");
+	    	return "redirect:/profile";
+	    }
+	
+	    
+	    @RequestMapping(value = "memberDeleteView", method = RequestMethod.GET)
+		public void memberDeleteGET() {
+			
+			logger.info("íšŒì›íƒˆí‡´ í˜ì´ì§€ ì§„ì…");
+			
+		}
+		
+		
+		@PostMapping("/memberDelete")
+	    public String userDeletePOST(MemberVO member, RedirectAttributes rttr, HttpSession session) {
+	    	service.memberDelete(member);
+	    	rttr.addFlashAttribute("result", "delete success");
+			 session.invalidate();
+	    	return "redirect:/main";
+	    }
+
+		
+	}
+		
+		
+		
+		
+		
+			/*
 		
 		
 		@Autowired
@@ -105,10 +155,12 @@ public class PageController {
 			
 		}
 		
+		*/
 		
 		
 		
 		
 		
-}
+		
+
 
