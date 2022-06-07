@@ -23,7 +23,7 @@ import com.fit.service.MemberService;
 
 
 @Controller
-@RequestMapping(value = "/member")
+@RequestMapping(value = "/member/*")
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
@@ -152,38 +152,8 @@ public class MemberController {
 			
 		}
 		
-		//회원정보 페이지로 이동
-				@RequestMapping(value = "profile", method = RequestMethod.GET)
-				public void proGET() {
-					
-					logger.info("회원정보페이지로 이동");
-					
-				}
-				
-				
-				//회원수정
-				@RequestMapping(value="profile", method=RequestMethod.POST)
-				
-				public String memberUpdatePOST(MemberVO member) throws Exception{
-					
-					logger.info("회원 수정 진입");
-					
-					//회원가입 서비스 실행
-					memberservice.memberUpdate(member);
-					
-					logger.info("회원 수정 성공");
-					
-					return "redirect:/update";
-					
-				}
 		
-				//회원정보수정완료 페이지로 이동
-				@RequestMapping(value = "update", method = RequestMethod.GET)
-				public void updateSGET() {
-					
-					logger.info("회원정보페이지 수정 완료로 이동");
-					
-				}
+				
 				
 				
 		
@@ -202,23 +172,7 @@ public class MemberController {
 		
 		
 				
-				//회원탈퇴 완료 페이지로 이동
-				@RequestMapping(value = "memberDeleteSuc", method = RequestMethod.GET)
-				public void memDelSucGET() {
-					
-					logger.info("탈퇴완료");
-					
-				}
-				
-				
-				
-				//테스트 페이지로 이동
-				@RequestMapping(value = "loginjoin", method = RequestMethod.GET)
-				public void GET() {
-					
-					logger.info("탈퇴완료");
-					
-				}
+	
 				
 				
 				
