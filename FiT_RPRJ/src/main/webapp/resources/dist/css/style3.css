@@ -17,7 +17,7 @@ table {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
-	line-height: 24px;
+	line-height: 29px;
 }
 
 table th {
@@ -26,12 +26,12 @@ table th {
 }
 
 th {
-  text-align: left;
+  	text-align: left;
 	font-weight: 600;
 	font-size: 25px;
 }
 
-.btn{
+.modify-button{
 	font-family: 'Gowun Dodum', sans-serif;
 	display: inline-block;
   	padding: 1em 0;
