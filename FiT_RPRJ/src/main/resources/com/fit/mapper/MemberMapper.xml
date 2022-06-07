@@ -45,14 +45,18 @@
  	<!-- 회원정보 수정 -->
  	<update id ="memberUpdate">
  		UPDATE MEMBER
+ 		SET
  		USERPASS = #{userPass},
  		USERNAME = #{userName},
  		USERMAIL = #{userMail}
  		WHERE USERID = #{userId} 	
  	</update>
  	
+ 	<!-- 회원 정보 보기 -->
+ 	<select id = "memberGetList" resultType="com.fit.model.MemberVO">
  	
- 	
+ 	select * from member where userId = #{userId}
+ 	</select>
  	
 
 
