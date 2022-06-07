@@ -17,15 +17,14 @@ public interface MemberMapper {
 	//패스워드 체크
 	public int passCheck(String userPass) throws Exception;
 		
-		
-	//회원정보 수정
-		public void memberUpdate(MemberVO member);
-		
-		
-	//회원탈퇴
-		public int memberDelete(int memberId);
+	/* 회원 정보 수정*/
+	public void memberUpdate(MemberVO member);
 	
+
 	
+	/*회원 탈퇴 */
+	public void memberDelete(MemberVO member);
+
 		
 		
 		
