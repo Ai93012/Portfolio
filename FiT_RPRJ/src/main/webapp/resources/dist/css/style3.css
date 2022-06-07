@@ -6,7 +6,7 @@ h1 {
   font-family: 'Gowun Dodum', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 17px;
 	color: #000000;
 }
 
@@ -22,13 +22,13 @@ table {
 
 table th {
 	border-top: #000000 solid 1px;
-	padding: 25px 5px 5px;
+	padding: 30px 5px 10px;
 }
 
 th {
   text-align: left;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .btn{
