@@ -131,7 +131,7 @@ public class PageController {
 	    	service.memberDelete(member);
 	    	rttr.addFlashAttribute("result", "delete success");
 			 session.invalidate();
-	    	return "redirect:/main";
+	    	return "redirect:member/memberDeleteSuc";
 	    }
 
 		
