@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.fit.mapper.QnaMapper">
+  
+  
+  <!-- 문의사항 게시판 등록 -->
+<insert id="registerQ">
+
+insert into qna(qTitle, qContent) values (#{qTitle}, #{qContent} )
+
+</insert>
+
+<!-- 문의사항 게시판 목록 -->
+  <select id="getListQ" resultType="com.fit.model.QnaVO">
+  
+  select * from qna
+  
+  </select>
+  
+  <!-- 문의사항 게시판 조회 -->
+  <select id="getPageQ" resultType="com.fit.model.QnaVO">
+  
+  select * from qna where qBno = #{qBno}
+  
+  </select>
+  
+  
+  <!-- 문의사항 글 수정 -->
+  <update id="modifyQ">
+  
+  update qna set qTitle = #{qTitle}, qContent = #{qContent}
+   where qBno = #{qBno}
+  
+  </update>
+  
+   <!-- 문의사항 게시판 삭제 -->
+ <delete id="deleteQ">
+ 	delete from qna where qBno = #{qBno}
+ 	
+ </delete>
+  
+  
+  </mapper>
