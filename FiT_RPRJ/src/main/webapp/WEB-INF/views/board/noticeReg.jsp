@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <script type="text/javascript" src="/resources/smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/style4.css">
+<link rel="stylesheet" href="../resources/css/regstyle.css">
     
 <!DOCTYPE html>
 <html>
