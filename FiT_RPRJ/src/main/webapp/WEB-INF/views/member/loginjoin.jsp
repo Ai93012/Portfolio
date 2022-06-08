@@ -64,7 +64,12 @@
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="주소" id="logaddress" autocomplete="off">
+												<input type="password" name="logpass" class="form-style" placeholder="우편번호" id="logaddress" autocomplete="off">
+												<i class="input-icon uil uil-envelope"></i>
+												<a href="#" class="btn mt-4">우편번호 찾기</a>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="상세주소" id="logaddress" autocomplete="off">
 												<i class="input-icon uil uil-home"></i>
 											</div>
 											<div class="form-group mt-2">
