@@ -56,7 +56,7 @@
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="email" name="logemail" class="form-style" placeholder="아이디" id="logid" autocomplete="off">
+												<input type="text" name="logid" class="form-style" placeholder="아이디" id="logid" autocomplete="off">
 												<i class="input-icon uil uil-user-circle"></i>
 											</div>	
 											<div class="form-group mt-2">
@@ -64,16 +64,20 @@
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="우편번호" id="logaddress" autocomplete="off">
+												<input type="text" name="logaddressnum" class="form-style" placeholder="우편번호" id="logaddressnum" autocomplete="off">
 												<i class="input-icon uil uil-envelope"></i>
 											</div>
 											<a href="#" class="btn mt-4">우편번호 찾기</a>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="상세주소" id="logaddress" autocomplete="off">
+												<input type="text" name="logaddress" class="form-style" placeholder="기본주소" id="logaddress" autocomplete="off">
 												<i class="input-icon uil uil-home"></i>
 											</div>
+                                            <div class="form-group mt-2">
+												<input type="text" name="logaddressdet" class="form-style" placeholder="상세주소" id="logaddressdet" autocomplete="off">
+												<i class="input-icon uil uil-house-user"></i>
+											</div>
 											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="이메일" id="logemail" autocomplete="off">
+												<input type="email" name="logemail" class="form-style" placeholder="이메일" id="logemail" autocomplete="off">
 												<i class="input-icon uil uil-at"></i>
 											</div>
 											<a href="#" class="btn mt-4">회원가입</a>
