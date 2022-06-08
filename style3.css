@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+h1 {
+  	text-align: left;
+  	width: 70%;
+  	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	color: #000000;
+}
+
+table {
+	width: 70%;
+	border-collapse: collapse;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 29px;
+}
+
+table th {
+	border-top: #000000 solid 1px;
+	padding: 30px 5px 15px;
+}
+
+th {
+  	text-align: left;
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.modify-button{
+	font-family: 'Gowun Dodum', sans-serif;
+	display: inline-block;
+  	padding: 1em 0;
+  	border-radius: 0;
+	color: #aaaaaa;
+  	margin-top:2rem;
+  	font-weight: 500;
+  	font-size: 15px;
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	text-decoration: none;
+	position: relative;
+	&:before,
+	&:after{
+		content: '';
+    	display: block;
+    	position: absolute;
+    	height: 1px;
+    	width: 0;
+
+	}
+	&:before{
+		transition: width 0s ease,background .4s ease;
+		left: 0;
+		right: 0;
+    	bottom: 6px;
+	}
+	&:after{
+		right: 2.2%;
+    	bottom: 6px;
+    	background: #aaaaaa;
+		transition: width .4s ease;
+	}
+	
+	&:hover{
+		&:before{
+			width: 97.8%;
+			background: #aaaaaa;
+    		transition: width .4s ease;
+		}
+		&:after{
+			width: 97.8%;
+    		background: 0 0;
+			transition: all 0s ease;
+		}
+	}
+}
