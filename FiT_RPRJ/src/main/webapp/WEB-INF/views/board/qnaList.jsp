@@ -39,7 +39,7 @@
             <tr align = "center">
                 <td><c:out value="${list.qBno}"/></td>
                 <td>
-                	<a class="move" href='/board/qna?eBno=<c:out value="${list.qBno}"/>'>
+                	<a class="move" href='/board/qna?qBno=<c:out value="${list.qBno}"/>'>
                 	<c:out value="${list.qTitle}"/>
                 	</a>
                 </td>
