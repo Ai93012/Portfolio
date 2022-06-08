@@ -22,9 +22,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
-<h1>Notice</h1>
+<h1>공지사항</h1>
 	<div id="wrap" align="center">
-		<h6>NOTICE</h6>
+		<h6>공지사항</h6>
 		<table class="list">
 		<c:set var="paging" value="${listModel.paging}" />
 		<c:if test="${paging.numberOfRecords > 0}">
@@ -35,7 +35,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 		
 			<tr>
-				<th>#번호</th>
+				<th>번호</th>
 				<th>제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
