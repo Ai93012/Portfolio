@@ -36,8 +36,8 @@
 			</tr>
 		   </thead>	
 			  <c:forEach items="${list}" var="list">
-            <tr>
-                <td><c:out value="${list.aBno}"/></td>
+            <tr align = "center">
+                <td><c:out value="${list.qBno}"/></td>
                 <td>
                 	<a class="move" href='/board/qna?eBno=<c:out value="${list.qBno}"/>'>
                 	<c:out value="${list.qTitle}"/>

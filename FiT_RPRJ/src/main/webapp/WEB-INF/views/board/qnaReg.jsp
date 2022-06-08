@@ -16,8 +16,8 @@
 
 
 <meta charset="UTF-8">
-<title>공지사항 글 작성</title>
-<h1>공지사항 글 작성</h1>
+<title>문의사항 글 작성</title>
+<h1>문의사항 글 작성</h1>
  <br><br><br><br>
 <form action="/board/qnaReg" method="POST">
 	<div class="input_wrap" align=center>

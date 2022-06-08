@@ -17,7 +17,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </script>
 <head>
 <meta charset="UTF-8">
-<title>${pageInfo.qTitle} : 공지사항</title>
+<title>${pageInfo.qTitle} : 문의사항</title>
 </head>
 <body>
 	<div id="wrap" align="center">

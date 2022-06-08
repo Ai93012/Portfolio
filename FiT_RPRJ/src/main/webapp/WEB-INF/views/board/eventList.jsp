@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 목록 페이지</title>
+<title>이벤트 목록 페이지</title>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
@@ -22,9 +22,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
-<h1>공지사항</h1>
+<h1>이벤트</h1>
 	<div id="wrap" align="center">
-		<h6>공지사항</h6>
+		<h6>이벤트</h6>
 		<table class="list">
 		<c:set var="paging" value="${listModel.paging}" />
 		<c:if test="${paging.numberOfRecords > 0}">
