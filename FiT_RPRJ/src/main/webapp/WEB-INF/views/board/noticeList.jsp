@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,29 +22,30 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
+<h1>Notice</h1>
 	<div id="wrap" align="center">
-		<h6>공지사항</h6>
+		<h6>NOTICE</h6>
 		<table class="list">
 		<c:set var="paging" value="${listModel.paging}" />
 		<c:if test="${paging.numberOfRecords > 0}">
 		</c:if>
 			<tr>
 				<td colspan="5" style="border: white; text-align: right">
-				<a href="/board/noticeReg"><b class="modify-button" >게시글 등록</b></a></td>
+				<a href="/board/noticeReg"><b class="modify-button" >게시글 등록</b></td></a>
 			</tr>
 		
 			<tr>
-				<th>&nbsp;번호</th>
-				<th>&nbsp;제목</th>
-				<th>&nbsp;작성자</th>
-				<th>&nbsp;작성일</th>
-				<th>&nbsp;조회수</th>
+				<th>#번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>조회수</th>
 				
 			</tr>
 
 	
 		<c:forEach items="${list}" var="list">	
-			<tr>
+			<tr align = "center">
 				<td><c:out value="${list.nBno}"/></td>
 				<td>
 					<a class="move" href='/board/notice?nBno=<c:out value="${list.nBno}"/>'>
@@ -54,11 +54,11 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 				</td>
 				<td><c:out value="${list.aId}"/></td> 
 				<td><c:out value="${list.nReg}"/></td>	
-				<td><c:out value="${list.nReg }"/></td>		
-				<td><c:out value="${list.nHit }"/></td>		
+				<td><c:out value="${list.nHit }"/></td>			
 			</tr>
 		</c:forEach>
-			</form>
+		</div>
+			
 	<c:choose>
 		<c:when test="${paging.numberOfRecords == 0}">
 			<tr>
@@ -68,15 +68,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 		</c:when>
 		<c:otherwise>
-		<c:forEach var="board" items="${listModel.boardList}">
-			<tr class="record">
-				<td>${board.num}</td>
-				<td><a href="view.do?num=${list.num}">${list.nTitle}</a></td>
-				<td>${board.name}</td>
-				<td><fmt:formatDate value="${board.writeDate}" /></td>
-				<td>${board.readCount}</td>
-			</tr>
-		</c:forEach>
+	
 		
 			<tr>
 				<td colspan="5" style="text-align: center">
@@ -142,19 +134,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	});
 	
 	
-	/*
-	
-	let moveForm = $("#moveForm");
-	 
-    $(".move").on("click", function(e){
-        e.preventDefault();
-        
-        moveForm.append("<input type='hidden' name='nBno' value='"+ $(this).attr("href")+ "'>");
-        moveForm.attr("action", "/board/notice");
-        moveForm.submit();
-    });
-	
-*/
 </script>	
 </body>
 </html>

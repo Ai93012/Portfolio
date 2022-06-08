@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    
+    
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-<script type="text/javascript" src="/resources/smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/regstyle.css">
+<link rel="stylesheet" href="../resources/css/style.css">
     
 <!DOCTYPE html>
 <html>
@@ -22,29 +25,27 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 <h1>수정 페이지</h1>
 
-<br><br><br><br>
 <form id="modifyForm" action ="/board/noticeMod" method="post">
 	<div class="input_wrap" align=center>
 		<label>제목</label>
-    <br><br>
-		<input name="nTitle" style="width: 550px; height: 20px;">
+		<input name="nTitle" style="width: 550px"  value='<c:out value="${pageInfo.nTitle}"/>' >
 	</div>
-  <br><br>
-  <div class="input_wrap" align=center>
-		<label>작성자</label>
-    <br><br>
-		<input name="aId" style="height: 20px;">
+	<br><br>
 	
-	</div>
-  <br><br>
 	<div class="input_wrap" align=center>
-		<label>내용</label>
-    <br><br>
-		<textarea rows="30" cols="100" name="nContent"></textarea>
+		
+		<textarea rows="30" cols="100" name="nContent" ><c:out value="${pageInfo.nContent}"/></textarea>
 	</div>
-  <br><br><br>
+	<br><br>
+	<div class="input_wrap" align=center>
+		<label>작성자</label>
+		<input name="aId" readonly="readonly" value='<c:out value="${pageInfo.aId}"/>' >
+	</div>	
+	  <br><br><br>
 	<div class="btn_wrap" align=center>
-		<button class="btn" id="modify_btn">수정</button>
+		<a class="btn" id="modify_btn">수정 완료</a>&nbsp; &nbsp;
+		<a class="btn" id="cancel_btn">수정 취소</a>&nbsp; &nbsp;
+		<a class="btn" id="delete_btn">삭제</a>
 		
 	</div>
 	</form>

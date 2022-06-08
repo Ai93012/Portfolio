@@ -29,7 +29,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 			<tr>
 				<td style="border-bottom: #111111 solid 1px;
-	padding: 5px 5px 25px;">${pageInfo.nReg} &nbsp; 조회수 ${pageInfo.nHit} &nbsp; 작성자 ${pageInfo.aId}</td>
+	padding: 5px 5px 25px;">${board.writeDate} &nbsp; 조회수 ${board.readCount} &nbsp; 작성자 ${pageInfo.aId}</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
