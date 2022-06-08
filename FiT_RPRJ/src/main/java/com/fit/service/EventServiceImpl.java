@@ -2,71 +2,42 @@ package com.fit.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.fit.mapper.BoardAttachMapper;
 import com.fit.mapper.EventMapper;
-import com.fit.model.BoardAttachVO;
-import com.fit.model.Criteria;
 import com.fit.model.EventVO;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
-
-@Log4j
 @Service
-@AllArgsConstructor
 public class EventServiceImpl implements EventService {
+	
+	@Autowired
 	private EventMapper mapper;
 	
-	private BoardAttachMapper attachMapper;
+	@Override
+	public void enrollE(EventVO ev) {
+		mapper.enrollE(ev);
+	}
 	
-	@Transactional
 	@Override
-	public List<EventVO> getList(Criteria cri) {
-		log.info("get List with Criteria: " + cri);
-//		return mapper.getListWithPaging(cri);
-		List<EventVO> list = mapper.getListWithPaging2(cri);
-		for(EventVO event : list) {
-			event.setBannerList(attachMapper.findByBno(event.getBno()));
-		}
-		return list;  //12c 기능 이용
+	public List<EventVO>getListE(){
+		return mapper.getListE();
 	}
-
+	
 	@Override
-	public int getTotal(Criteria cri) {
-		log.info("get total count");
-		return mapper.getTotalCount(cri);
+	public EventVO getPageE(int eBno) {
+	return mapper.getPageE(eBno);
+	
 	}
-
-	@Transactional
+	
+	
 	@Override
-	public void register(EventVO event) {
-		log.info("register..." + event);
-		mapper.insertSelectKey(event);
-
-		BoardAttachVO eFile = event.getBannerList().get(0);
-		eFile.setBno(event.getBno());
-		attachMapper.insert(eFile);
+	public int modifyE(EventVO ev) {
+		return mapper.modifyE(ev);
 	}
-
+	
 	@Override
-	public List<EventVO> getMainEvent() {
-		log.info("getMainEvent");
-		List<EventVO> list = mapper.getMainEvent();
-		for(EventVO event : list) {
-			event.setBannerList(attachMapper.findByBno(event.getBno()));
-		}
-		return list;  //12c 기능 이용
-	}
-
-	@Transactional
-	@Override
-	public EventVO get(Long bno) {
-		log.info("get... " + bno);
-		EventVO event = mapper.read(bno);
-		event.setBannerList(attachMapper.findByBno(bno));
-		return event;
+	public int deleteE(int eBno) {
+		return mapper.deleteE(eBno);
 	}
 }
