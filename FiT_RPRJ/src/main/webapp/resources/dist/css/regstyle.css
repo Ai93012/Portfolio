@@ -5,7 +5,7 @@ h1 {
   	font-family: 'Gowun Dodum', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 30px;
+	font-size: 40px;
 	color: #000000;
 }
 
@@ -14,7 +14,6 @@ label {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
-	line-height: 24px;
 }
 
 .btn{
