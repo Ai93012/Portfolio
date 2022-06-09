@@ -14,7 +14,7 @@ public interface EventMapper {
 	public List<EventVO> getListE();
 	
 	/*이벤트 게시판 조회*/
-	public EventVO getPageE(int ebno);
+	public EventVO getPageE(int eBno);
 	
 	/*이벤트 게시판 수정 */
 	public int modifyE(EventVO ev);
