@@ -1,24 +1,94 @@
 package com.fit.model;
 
+import java.sql.Date;
+
 public class NoticeVO {
 	
-	//배송받는 분 이름
-	private String adrName;
+	//작성자(관리자) 아이디
+	private String aId;
 
 	
-	//배송지 우편번호
-	private String delAdd1;
+	//게시판 번호
+	private int nBno;
 	
-	//배송지 기본주소
-	private String delAdd2;
+	//게시판 제목
+	private String nTitle;
 	
-	//배송지 상세주소
-	private String delAdd3;
+	//게시판 내용
+	private String nContent;
 	
-	//배송받는 분 핸드폰 번호
-	private String phonNum;
+	//작성글 등록일
+	private Date nReg;
 	
-	//배송메시지
-	private String message;
+	//조회수
+	private int nHit;
+	
+	//첨부파일
+	private String nFile;
 
+	public String getaId() {
+		return aId;
+	}
+
+	public void setaId(String aId) {
+		this.aId = aId;
+	}
+
+	public int getnBno() {
+		return nBno;
+	}
+
+	public void setnBno(int nBno) {
+		this.nBno = nBno;
+	}
+
+	public String getnTitle() {
+		return nTitle;
+	}
+
+	public void setnTitle(String nTitle) {
+		this.nTitle = nTitle;
+	}
+
+	public String getnContent() {
+		return nContent;
+	}
+
+	public void setnContent(String nContent) {
+		this.nContent = nContent;
+	}
+
+	public Date getnReg() {
+		return nReg;
+	}
+
+	public void setnReg(Date nReg) {
+		this.nReg = nReg;
+	}
+
+	public int getnHit() {
+		return nHit;
+	}
+
+	public void setnHit(int nHit) {
+		this.nHit = nHit;
+	}
+
+	public String getnFile() {
+		return nFile;
+	}
+
+	public void setnFile(String nFile) {
+		this.nFile = nFile;
+	}
+
+	@Override
+	public String toString() {
+		return "NoticeVO [aId=" + aId + ", nBno=" + nBno + ", nTitle=" + nTitle + ", nContent=" + nContent + ", nReg="
+				+ nReg + ", nHit=" + nHit + ", nFile=" + nFile + "]";
+	}
+
+	
+	
+	
 }

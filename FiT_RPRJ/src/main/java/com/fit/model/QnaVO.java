@@ -4,34 +4,34 @@ import java.sql.Date;
 
 public class QnaVO {
 
-	//ÀÛ¼ºÀÚ(°ü¸®ÀÚ ¾ÆÀÌµğ)
-	private String aId;
+	//ì‘ì„±ì(ê´€ë¦¬ì ì•„ì´ë””)
+		private String aId;
 
-	
-	//ÀÛ¼ºÀÚ(»ç¿ëÀÚ ¾ÆÀÌµğ)
-	private String userId;
-	
-	//ÀÛ¼ºÀÚ (°ü¸®ÀÚ ÀÌ¸§)
-	private String aName;
-	
-	//ÀÛ¼ºÀÚ (»ç¿ëÀÚ ÀÌ¸§)
-	private String userName;
-	
-	//¹®ÀÇ °Ô½ÃÆÇ Á¦¸ñ
-	private String qTitle;
-	
-	//¹®ÀÇ °Ô½ÃÆÇ ³»¿ë
-	private String qContent;
-	
-	//ÀÛ¼ºÀÏ
-	private Date qReg;
-	
-	//°Ô½ÃÆÇ ¹øÈ£
-	private int qBno;
-	
-	
-	//Á¶È¸¼ö
-	private int qHit;
+		
+		//ì‘ì„±ì(ì‚¬ìš©ì ì•„ì´ë””)
+		private String userId;
+		
+		//ì‘ì„±ì (ê´€ë¦¬ì ì´ë¦„)
+		private String aName;
+		
+		//ì‘ì„±ì (ì‚¬ìš©ì ì´ë¦„)
+		private String userName;
+		
+		//ë¬¸ì˜ ê²Œì‹œíŒ ì œëª©
+		private String qTitle;
+		
+		//ë¬¸ì˜ ê²Œì‹œíŒ ë‚´ìš©
+		private String qContent;
+		
+		//ì‘ì„±ì¼
+		private Date qReg;
+		
+		//ê²Œì‹œíŒ ë²ˆí˜¸
+		private int qBno;
+		
+		
+		//ì¡°íšŒìˆ˜
+		private int qHit;
 
 
 	public String getaId() {
