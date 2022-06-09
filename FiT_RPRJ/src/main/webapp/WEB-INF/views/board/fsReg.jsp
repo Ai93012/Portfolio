@@ -19,7 +19,7 @@
 <title>푸드스토리 글 작성</title>
 <h1>푸드스토리 글 작성</h1>
  <br><br><br><br>
-<form action="/board/foodReg" method="POST">
+<form action="/board/fsReg" method="POST">
 	<div class="input_wrap" align=center>
 		<label>제목</label>
     <br><br>		

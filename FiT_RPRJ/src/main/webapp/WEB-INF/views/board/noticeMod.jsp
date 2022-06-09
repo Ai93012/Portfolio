@@ -24,9 +24,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 <h1>수정 페이지</h1>
 <br><br><br><br>
-<form id="modifyForm" action ="/board/noticeMod" method="post">
+<form id="modifyForm" action ="/board/modifyN" method="post">
 	<div class="input_wrap" align=center>
-	
+	<input type="hidden" name="nBno" value='<c:out value="${pageInfo.nBno}"/>'>
 	<br><br>
 		<label>제목</label>
 		 <br><br>
@@ -45,14 +45,14 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		<textarea rows="30" cols="100" name="nContent" ><c:out value="${pageInfo.nContent}"/></textarea>
 	</div>
 	  <br><br><br>
-<div class="btn_wrap" align=center>
-		<button class="btn" id="modify_btn">수정</button>
+		<div class="btn_wrap" align=center>
+		<button class="btn" type = submit id="modify_btn">수정</button>
 		
 	</div>
 	</form>
 	
 	
-	<form id="infoForm" action="/board/noticeMdo" method="get">
+	<form id="infoForm" action="/board/noticeMod" method="get">
 		<input type="hidden" id="nBno" name="nBno" value='<c:out value="${pageInfo.nBno}"/>'>
 	
 </form>
@@ -73,7 +73,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	
 	//수정하기
 	$("#modify_btn").on("click", function(e){
-		form.attr("action", "/board/noticeMod");
+		form.attr("action", "/board/modifyN");
 		mForm.submit();
 	});	
 	

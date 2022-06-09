@@ -30,7 +30,7 @@
   <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="aId" style="height: 20px;">
+		<input name="userName" style="height: 20px;" value="${member.userName }" readonly:"readonly">
 
 	</div>
   <br><br>

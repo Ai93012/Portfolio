@@ -31,7 +31,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		</c:if>
 			<tr>
 				<td colspan="5" style="border: white; text-align: right">
-				<a href="/board/foodReg"><b class="modify-button" >게시글 등록</b></td></a>
+				<a href="/board/fsReg"><b class="modify-button" >게시글 등록</b></td></a>
 			</tr>
 		
 			<tr>
@@ -48,11 +48,11 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			<tr align = "center">
 				<td><c:out value="${list.fBno}"/></td>
 				<td>
-					<a class="move" href='/board/food?fBno=<c:out value="${list.fBno}"/>'>
+					<a class="move" href='/board/foodStory?fBno=<c:out value="${list.fBno}"/>'>
 						<c:out value="${list.fTitle}"/>
 					</a>
 				</td>
-				<td><c:out value="${list.aId}"/></td> 
+				<td><c:out value="${member.userName}"/></td> 
 				<td><c:out value="${list.fReg}"/></td>	
 				<td><c:out value="${list.fHit }"/></td>			
 			</tr>

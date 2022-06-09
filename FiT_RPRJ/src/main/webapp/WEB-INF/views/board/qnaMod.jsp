@@ -24,9 +24,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 <h1>수정 페이지</h1>
 <br><br><br><br>
-<form id="modifyForm" action ="/board/qnaMod" method="post">
+<form id="modifyForm" action ="/board/modifyQ" method="post">
 	<div class="input_wrap" align=center>
-	
+	<input type="hidden" name="qBno" value='<c:out value="${pageInfo.qBno}"/>'>
 	<br><br>
 		<label>제목</label>
 		 <br><br>
@@ -36,7 +36,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="aId" style="height: 20px;">
+		<input name="aId" style="height: 20px;" readonly="readonly" value='<c:out value="${pageInfo.aId}"/>' >
 		</div>
  	 <br><br>
 		
@@ -45,14 +45,14 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		<textarea rows="30" cols="100" name="qContent" ><c:out value="${pageInfo.qContent}"/></textarea>
 	</div>
 	  <br><br><br>
-<div class="btn_wrap" align=center>
-		<button class="btn" id="modify_btn">수정</button>
+		<div class="btn_wrap" align=center>
+		<button class="btn" type = submit id="modify_btn">수정</button>
 		
 	</div>
 	</form>
 	
 	
-	<form id="infoForm" action="/board/qnaMdo" method="get">
+	<form id="infoForm" action="/board/qnaMod" method="get">
 		<input type="hidden" id="qBno" name="qBno" value='<c:out value="${pageInfo.qBno}"/>'>
 	
 </form>
@@ -73,9 +73,11 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	
 	//수정하기
 	$("#modify_btn").on("click", function(e){
-		form.attr("action", "/board/qnaMod");
+		form.attr("action", "/board/modifyQ");
 		mForm.submit();
 	});	
 	
 
 </script>	
+</body>
+</html>

@@ -28,7 +28,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 			<tr>
 				<td style="border-bottom: #111111 solid 1px;
-	padding: 5px 5px 25px;">${pageInfo.fReg} &nbsp; 조회수 ${pageInfo.fHit} &nbsp; 작성자 ${pageInfo.aId}</td>
+	padding: 5px 5px 25px;">${pageInfo.fReg} &nbsp; 조회수 ${pageInfo.fHit} &nbsp; 작성자 ${member.userName}</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
@@ -51,12 +51,12 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	
 	$("#list_btn").on("click", function(e){
 		form.find("#fBno").remove();
-		form.attr("action", "/board/foodList");
+		form.attr("action", "/board/foodStoryList");
 		form.submit();
 	});
 	
 	$("#modify_btn").on("click", function(e){
-		form.attr("action", "/board/foodMod");
+		form.attr("action", "/board/fsMod");
 		form.submit();
 	});	
 	

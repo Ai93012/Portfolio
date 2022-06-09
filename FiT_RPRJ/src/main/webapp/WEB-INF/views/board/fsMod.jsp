@@ -24,9 +24,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 <h1>수정 페이지</h1>
 <br><br><br><br>
-<form id="modifyForm" action ="/board/foodMod" method="post">
+<form id="modifyForm" action ="/board/modifyF" method="post">
 	<div class="input_wrap" align=center>
-	
+	<input type="hidden" name="fBno" value='<c:out value="${pageInfo.fBno}"/>'>
 	<br><br>
 		<label>제목</label>
 		 <br><br>
@@ -45,14 +45,14 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		<textarea rows="30" cols="100" name="fContent" ><c:out value="${pageInfo.fContent}"/></textarea>
 	</div>
 	  <br><br><br>
-<div class="btn_wrap" align=center>
-		<button class="btn" id="modify_btn">수정</button>
+		<div class="btn_wrap" align=center>
+		<button class="btn" type = submit id="modify_btn">수정</button>
 		
 	</div>
 	</form>
 	
 	
-	<form id="infoForm" action="/board/foodMdo" method="get">
+	<form id="infoForm" action="/board/fsMod" method="get">
 		<input type="hidden" id="fBno" name="fBno" value='<c:out value="${pageInfo.fBno}"/>'>
 	
 </form>
@@ -66,14 +66,14 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	
 	$("#list_btn").on("click", function(e){
 		form.find("#fBno").remove();
-		form.attr("action", "/board/foodList");
+		form.attr("action", "/board/foodStoryList");
 		form.submit();
 	});
 	
 	
 	//수정하기
 	$("#modify_btn").on("click", function(e){
-		form.attr("action", "/board/foodMod");
+		form.attr("action", "/board/modifyF");
 		mForm.submit();
 	});	
 	

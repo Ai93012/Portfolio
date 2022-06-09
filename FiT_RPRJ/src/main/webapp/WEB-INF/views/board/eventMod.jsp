@@ -24,9 +24,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 <h1>수정 페이지</h1>
 <br><br><br><br>
-<form id="modifyForm" action ="/board/eventMod" method="post">
+<form id="modifyForm" action ="/board/modifyE" method="post">
 	<div class="input_wrap" align=center>
-	
+	<input type="hidden" name="eBno" value='<c:out value="${pageInfo.eBno}"/>'>
 	<br><br>
 		<label>제목</label>
 		 <br><br>
@@ -45,14 +45,14 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		<textarea rows="30" cols="100" name="eContent" ><c:out value="${pageInfo.eContent}"/></textarea>
 	</div>
 	  <br><br><br>
-<div class="btn_wrap" align=center>
-		<button class="btn" id="modify_btn">수정</button>
+		<div class="btn_wrap" align=center>
+		<button class="btn" type = submit id="modify_btn">수정</button>
 		
 	</div>
 	</form>
 	
 	
-	<form id="infoForm" action="/board/eventMdo" method="get">
+	<form id="infoForm" action="/board/EventMod" method="get">
 		<input type="hidden" id="eBno" name="eBno" value='<c:out value="${pageInfo.eBno}"/>'>
 	
 </form>
@@ -73,7 +73,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	
 	//수정하기
 	$("#modify_btn").on("click", function(e){
-		form.attr("action", "/board/eventMod");
+		form.attr("action", "/board/modifyE");
 		mForm.submit();
 	});	
 	
