@@ -15,10 +15,8 @@ import com.fit.model.Criteria;
 import com.fit.model.EventVO;
 import com.fit.model.NoticeVO;
 import com.fit.model.PageMakeDTO;
-import com.fit.model.QnaVO;
 import com.fit.service.BoardService;
 import com.fit.service.EventService;
-import com.fit.service.QnaService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -35,19 +33,32 @@ private static final Logger logger = LoggerFactory.getLogger(MainController.clas
 private BoardService bservice;
 
 
+//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+		@RequestMapping(value = "/boardMain", method = RequestMethod.GET)
+		public void boardMainPageGET() {
+			
+			logger.info("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
+			
+		}
 
 
-		//°øÁö»çÇ× ÆäÀÌÁö·Î ÀÌµ¿
+	
+		
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)
 		public void noticePageGET(int nBno, Model model) {
-				
+		
+			bservice.upViewCount(nBno);
 		model.addAttribute("pageInfo", bservice.getPageN(nBno));	
-		logger.info("°øÁö»çÇ× ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
+		
+	
 					
 				}
 		
 		
-		//°øÁö ¸ñ·Ï ÆäÀÌÁö Á¢¼Ó (ÆäÀÌÂ¡ Àû¿ë)
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½)
+		
 		@GetMapping("/noticeList")
 		public void noticeListPageGET(Model model, Criteria cri) {
 			
@@ -64,17 +75,19 @@ private BoardService bservice;
 		
 		}
 		
+
 		
 		
-		//°øÁö»çÇ× ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿
+		
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/noticeReg", method = RequestMethod.GET)
 		public void noticeRegPageGET() {
 							
-		logger.info("°øÁö»çÇ× ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 							
 						}
 		
-		//°øÁö»çÇ× µî·Ï
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		@PostMapping("/noticeReg")
 		public String boardRegistPOST(NoticeVO nv, RedirectAttributes rttr) {
 		log.info("NoticeVO : " + nv);
@@ -84,16 +97,16 @@ private BoardService bservice;
 		return "redirect:/board/noticeList";
 				}
 		
-		//°øÁö»çÇ× ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/noticeMod", method = RequestMethod.GET)
 		public void noticeDetPageGET(int nBno, Model model) {
 			
 			model.addAttribute("pageInfo", bservice.getPageN(nBno));
 									
-		logger.info("°øÁö»çÇ× ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 									
 								}
-		//°øÁö»çÇ× ¼öÁ¤
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		@PostMapping("/noticeMod")
 		public String noticeModPOST(NoticeVO nv, RedirectAttributes rttr) {
 			bservice.modifyN(nv);
@@ -101,7 +114,7 @@ private BoardService bservice;
 		return "redirect:/board/noticeList";
 		}	
 		
-		//°øÁö»çÇ× »èÁ¦
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		@PostMapping("/deleteN")
 		public String noticeDeletePOST(int nBno, RedirectAttributes rttr) {
 			
@@ -111,109 +124,70 @@ private BoardService bservice;
 			
 			return "redirect:/board/noticeList";
 		}
-
-
-		//°Ô½ÃÆÇ ¸ŞÀÎ ÆäÀÌÁö·Î ÀÌµ¿
-		@RequestMapping(value = "/boardMain", method = RequestMethod.GET)
-		public void boardMainPageGET() {
-			
-			logger.info("°Ô½ÃÆÇ ¸ŞÀÎ ÆäÀÌÁö·Î ÀÌµ¿");
-			
-		}
-
-
-	
-		
-		
 				
-		//Çªµå½ºÅä¸® »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿
+		//Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/foodStory", method = RequestMethod.GET)
 		public void fStoryPageGET() {
 					
-		logger.info("Çªµå½ºÅä¸® »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 					
 				}
 		
-		//Çªµå½ºÅä¸® ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿
+		//Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/foodStoryList", method = RequestMethod.GET)
 		public void fStoryListPageGET() {
 							
-		logger.info("Çªµå½ºÅä¸® ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 							
 						}
 		
 		
-		//Çªµå½ºÅä¸® ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿
+		//Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/fsReg", method = RequestMethod.GET)
 		public void fStoryRegPageGET() {
 							
-		logger.info("Çªµå½ºÅä¸® ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 							
 						}
 	
-		//Çªµå½ºÅä¸® ±Û ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+		//Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         @RequestMapping(value = "/fsMod", method = RequestMethod.GET)
         public void fStoryModPageGET() {
 									
-		logger.info("Çªµå½ºÅä¸® ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 									
 								}
 			
-        
-    	@Autowired
-		private QnaService qservice;
-    	
-
-    
 		
-		//¹®ÀÇ»çÇ× »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/qna", method = RequestMethod.GET)
-		public void qnaGET(int qBno, Model model) {
-		
-			model.addAttribute("pageInfo", qservice.getPageQ(qBno));	
-		logger.info("¹®ÀÇ»çÇ× »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿");
+		public void qnaGET() {
+									
+		logger.info("ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 									
 								}
 		
-		//¹®ÀÇ»çÇ× ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/qnaList", method = RequestMethod.GET)
-		public void qnaListGET(Model model) {
-		
-		//¹®ÀÇ»çÇ× ¸ñ·Ï ³ªÅ¸³»±â
-		model.addAttribute("list", qservice.getListQ());
-			
-		logger.info("¹®ÀÇ»çÇ× ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿");
+		public void qnaListGET() {
+							
+		logger.info("ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 							
 						}
 		
-		
-	
-		
-		
-		//¹®ÀÇ»çÇ× ±ÛÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 		@RequestMapping(value = "/qnaReg", method = RequestMethod.GET)
 	     public void qnaRegGET() {
 									
-		logger.info("¹®ÀÇ»çÇ× ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿");
+		logger.info("ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 		
 		}
 		
-		
-		//¹®ÀÇ»çÇ× µî·Ï
-		@PostMapping("/qnaReg")
-		public String qBoardRegistPOST(QnaVO qv, RedirectAttributes rttr) {
-		log.info("QnaVO : " + qv);
-		qservice.registerQ(qv);
-		rttr.addFlashAttribute("result", "register success");
-		
-		return "redirect:/board/qnaList";
-				}
-		
-		//¹®ÀÇ»çÇ× ±Û ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+		//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				@RequestMapping(value = "/qnaMod", method = RequestMethod.GET)
 			     public void qnaModGET() {
 											
-				logger.info("¹®ÀÇ»çÇ× ±Û ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿");						
+				logger.info("ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");						
 								}
 				
 				
@@ -221,65 +195,49 @@ private BoardService bservice;
 				@Autowired
 				private EventService eservice;
 				
-				//ÀÌº¥Æ® »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿
+				//ï¿½Ìºï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				@RequestMapping(value = "/event", method = RequestMethod.GET)
-				public void eventPageGET(int eBno, Model model) {
+				public void eventPageGET() {
 					
-					model.addAttribute("pageInfo", eservice.getPageE(eBno));
-					logger.info("ÀÌº¥Æ® »ó¼¼ ÆäÀÌÁö·Î ÀÌµ¿");
+					logger.info("ï¿½Ìºï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 					
 				}
 				
 				
-				//ÀÌº¥Æ® ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿
+			//ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				@RequestMapping(value = "/eventList", method = RequestMethod.GET)
-				public void eventListPageGET(Model model) {
+				public void eventListPageGET() {
 							
-					logger.info("ÀÌº¥Æ® ¸ñ·Ï ÆäÀÌÁö·Î ÀÌµ¿");
-					model.addAttribute("list", eservice.getListE());		
+					logger.info("ì´ë²¤íŠ¸ ëª©ë¡ í˜ì´ì§€ë¡œ");
+							
 						}
 				
 				
-				//ÀÌº¥Æ® ÀÛ¼º±Û ÆäÀÌÁö·Î ÀÌµ¿
+				//ï¿½Ìºï¿½Æ® ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				@RequestMapping(value = "/eventReg", method = RequestMethod.GET)
 				public void eventregPageGET() {
 									
-				logger.info("ÀÌº¥Æ® ±Û ÀÛ¼º ÆäÀÌÁö·Î ÀÌµ¿");
+				logger.info("ï¿½Ìºï¿½Æ® ï¿½ï¿½ ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 									
 					}
 				
-				
-				//ÀÌº¥Æ® ±ÛÀÛ¼º
-				@PostMapping("/enrollE")
-				public String eventEnrollPOST(EventVO ev, RedirectAttributes rttr) {
-					eservice.enrollE(ev);
-					
-					//±Û µî·Ï ¾Ë¸²Ã¢ 1È¸¼ºÀ¸·Î µ¥ÀÌÅÍ Àü´Ş
-					rttr.addFlashAttribute("result", "register success");
-					log.info("Eventvo : " + ev);
+				@PostMapping("/erollE")
+				public String eventEnrollPOST(EventVO event) {
+					eservice.enrollE(event);
+					log.info("EventVo : " + event);
 				
 				return "redirect:/board/eventList";	
 				
 				}
 				
 				
-				//ÀÌº¥Æ® ±Û ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+				//ï¿½Ìºï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				@RequestMapping(value = "/eventMod", method = RequestMethod.GET)
 				public void eventDetPageGET() {
 											
-				logger.info("ÀÌº¥Æ® ±Û ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿");
+				logger.info("ï¿½Ìºï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½");
 											
 							}
-				
-				//ÀÌº¥Æ® ±Û »èÁ¦
-				@PostMapping("/deleteE")
-				public String eventDeletePOST(int eBno, RedirectAttributes rttr) {
-					eservice.deleteE(eBno);
-					rttr.addFlashAttribute("result", "delete success");
-					return "redirect:/board/eventlist";
-					
-				}
-				
 	
 }
 
