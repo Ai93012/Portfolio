@@ -20,14 +20,14 @@ public class BoardServiceImpl implements BoardService {
 		mapper.registerN(nv);
 	}
 	
-	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	//°øÁö ¸ñ·Ï
 	
 	@Override
 	public List<NoticeVO> getListN() {
 		return mapper.getListN();
 	}
 	
-	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Â¡)
+	//°øÁö ¸ñ·Ï(ÆäÀÌÂ¡)
 	
 	@Override
 	public List<NoticeVO> getListPaging(Criteria cri) {
@@ -35,35 +35,31 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	
-	/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ */
+	/*°øÁö Á¶È¸ */
 	@Override
 	public NoticeVO getPageN(int nBno) {
 		return mapper.getPageN(nBno);
 	}
 	
-	/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
+	/*°øÁö ¼öÁ¤*/
 	@Override
 	public int modifyN(NoticeVO nv) {
 		return mapper.modifyN(nv);
 		
 	}
 	
-	/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
+	/*°øÁö »èÁ¦*/
 	@Override
 	public int deleteN(int nBno) {
 		return mapper.deleteN(nBno);
 	}
 	
-	/*ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
+	/*°øÁö °Ô½ÃÆÇ ÃÑ °¹¼ö*/
 	@Override
 	public int getTotal() {
 		return mapper.getTotal();
 	}
 	
-	@Override
-	public int upViewCount(int nBno) {
-		return mapper.upViewCount(nBno);
-	}
 	
 	}
 

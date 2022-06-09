@@ -31,4 +31,16 @@ public class QnaServiceImpl implements QnaService {
 		return mapper.getPageQ(qBno);
 	}
 	
+	//문의사항 삭제
+	@Override
+	public int deleteQ(int qBno) {
+		return mapper.deleteQ(qBno);
+	}
+	
+	//문의사항 수정
+	@Override
+	public int modifyQ(QnaVO qv) {
+		return mapper.modifyQ(qv);
+	}
+	
 }

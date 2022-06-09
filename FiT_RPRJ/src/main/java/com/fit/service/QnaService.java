@@ -19,5 +19,11 @@ public interface QnaService {
 	/*문의사항 조회*/
 	public QnaVO getPageQ(int qBno);
 	
+	/*문의사항 삭제 */
+    public int deleteQ(int qBno);
+    
+    /*문의사항 글 수정*/
+    public int modifyQ(QnaVO qv);
+	
 	
 }
