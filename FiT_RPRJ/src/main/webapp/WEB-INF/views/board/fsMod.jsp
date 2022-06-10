@@ -27,7 +27,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <form id="modifyForm" action ="/board/modifyF" method="post">
 	<div class="input_wrap" align=center>
 	<input type="hidden" name="fBno" value='<c:out value="${pageInfo.fBno}"/>'>
-	<br><br>
+
 		<label>제목</label>
 		 <br><br>
 		<input name="fTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.fTitle}"/>' >
