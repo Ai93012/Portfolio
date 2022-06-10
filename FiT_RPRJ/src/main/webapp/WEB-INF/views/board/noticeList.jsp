@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/style.css">
+<link rel="stylesheet" href="../resources/dist/css/style.css">
     
 <!DOCTYPE html>
 <html>
@@ -43,8 +43,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 
 	
-		<c:forEach items="${list}" var="list">	
-			<tr align = "center">
+		<c:forEach items="${list}" var="list">
 				<td><c:out value="${list.nBno}"/></td>
 				<td>
 					<a class="move" href='/board/notice?nBno=<c:out value="${list.nBno}"/>'>
