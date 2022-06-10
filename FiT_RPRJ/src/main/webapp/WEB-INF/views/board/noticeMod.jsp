@@ -13,6 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>수정 페이지</title>
 
 
 
