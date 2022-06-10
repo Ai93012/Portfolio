@@ -27,7 +27,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <form id="modifyForm" action ="/board/modifyQ" method="post">
 	<div class="input_wrap" align=center>
 	<input type="hidden" name="qBno" value='<c:out value="${pageInfo.qBno}"/>'>
-	<br><br>
+
 		<label>제목</label>
 		 <br><br>
 		<input name="qTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.qTitle}"/>' >
