@@ -14,25 +14,25 @@
 		<ul>
 			<li>
 				<div>
-					<a href="#"><img src="/resources/images/login.png" width="49px" height="48px"></a><br>
+					<a href="#"><img src="/resources/images/login.png" width="49px" height="49px"></a><br>
 					<span>로그인</span>
 				</div>
 			</li>
 			<li>
 				<div>
-					<a href="#"><img src="/resources/images/sign.png" width="47px" height="46px"></a><br>
+					<a href="#"><img src="/resources/images/sign.png" width="47px" height="49px"></a><br>
 					<span>회원가입</span>
 				</div>
 			</li>
 			<li>
 				<div>
-					<a href="#"><img src="/resources/images/qna.png" width="48px" height="47px"></a><br>
+					<a href="#"><img src="/resources/images/qna.png" width="48px" height="49px"></a><br>
 					<span>문의사항</span>
 				</div>
 			</li>
 			<li>
 				<div>
-					<a href="#"><img src="/resources/images/order.png" width="50px" height="50px"></a><br>
+					<a href="#"><img src="/resources/images/order.png" width="50px" height="49px"></a><br>
 					<span>주문조회</span>
 				</div>
 				
