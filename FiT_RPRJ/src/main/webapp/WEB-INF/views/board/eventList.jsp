@@ -43,8 +43,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 
 	
-		<c:forEach items="${list}" var="list">	
-			<tr align = "center">
+		<c:forEach items="${list}" var="list">
 				<td><c:out value="${list.eBno}"/></td>
 				<td>
 					<a class="move" href='/board/event?eBno=<c:out value="${list.eBno}"/>'>
