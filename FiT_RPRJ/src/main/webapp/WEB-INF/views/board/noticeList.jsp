@@ -22,7 +22,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
-<h1>공지사항</h1>
 	<div id="wrap" align="center">
 		<h6>공지사항</h6>
 		<table class="list">
