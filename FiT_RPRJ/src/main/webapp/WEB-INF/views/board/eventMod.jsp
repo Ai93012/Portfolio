@@ -43,6 +43,8 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		
 	<div class="input_wrap" align=center>
 		
+		<label>내용</label>
+ 	 <br><br>
 		<textarea rows="30" cols="100" name="eContent" ><c:out value="${pageInfo.eContent}"/></textarea>
 	</div>
 	  <br><br><br>
