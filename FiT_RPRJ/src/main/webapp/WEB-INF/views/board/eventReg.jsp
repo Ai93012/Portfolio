@@ -22,7 +22,7 @@
 <form action="/board/eventReg" method="POST">
 	<div class="input_wrap" align=center>
 		<label>제목</label>
-    <br><br>		
+
 		<input name="eTitle" style="width: 550px, height: 20px;">
 		
 		</div>
