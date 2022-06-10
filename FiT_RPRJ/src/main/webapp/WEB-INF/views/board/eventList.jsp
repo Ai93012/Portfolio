@@ -22,7 +22,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
-<h1>이벤트</h1>
 	<div id="wrap" align="center">
 		<h6>이벤트</h6>
 		<table class="list">
