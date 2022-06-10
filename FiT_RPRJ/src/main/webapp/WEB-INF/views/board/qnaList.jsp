@@ -23,7 +23,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 
-<h1>문의사항 목록 페이지</h1>
 	<div id="wrap" align="center">
 		<h6>문의사항</h6>
 		<table>
