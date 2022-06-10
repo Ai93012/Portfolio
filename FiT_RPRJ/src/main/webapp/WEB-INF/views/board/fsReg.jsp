@@ -22,7 +22,7 @@
 <form action="/board/fsReg" method="POST">
 	<div class="input_wrap" align=center>
 		<label>제목</label>
-
+		<br><br>
 		<input name="fTitle" style="width: 550px, height: 20px;">
 		
 		</div>
