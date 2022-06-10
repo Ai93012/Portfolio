@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/regstyle.css">
+<link rel="stylesheet" href="../resources/css/dist/regstyle.css">
     
 <!DOCTYPE html>
 <html>
