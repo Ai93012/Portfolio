@@ -40,12 +40,12 @@ th {
 	font-weight: 500;
 }
 
-d {
+a {
 	text-decoration: none;
 	color: #000000;
 }
 
-d:HOVER {
+a:HOVER {
 	text-decoration: underline;
 	color: #000000;
 }
