@@ -20,7 +20,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </head>
 <body>
 	<div id="wrap" align="center">
-    <br>
 		<h1>&nbsp;${pageInfo.nBno}</h1>
 		<table>
 			<tr>
@@ -35,7 +34,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 					padding: 35px 5px 25px;"><pre>${pageInfo.nContent}</pre></td>
 			</tr>
 		</table>
-		<br><br>
+		<br>
     <div class="modify-button_wrap">
 				<a class="modify-button" id="modify_btn">수정</a> &nbsp; &nbsp;
 				<a class="modify-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
