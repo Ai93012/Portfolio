@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+
+
+/* table */
+
+
+h6 {
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 58px;
+	color: #000000;
+}
+
+table {
+	width: 70%;
+	border-collapse: collapse;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 24px;
+	table-layout: fixed;
+}
+
+table td {
+	border-bottom: #333333 solid 1px;
+	padding: 5px;
+}
+
+table th {
+	border-bottom: #111111 solid 1px;
+	padding: 5px;
+}
+
+th {
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:HOVER {
+	text-decoration: underline;
+	color: #000000;
+}
+
+
+/* page */
+
+
+.page-button {
+    font-family: 'Gowun Dodum', sans-serif;
+    display: inline-block;
+    padding: 1em 1.6em;
+    border-radius: 3px;
+    margin-top: 2rem;
+    color: #505959;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 250ms ease;
+}
+
+.page-button:hover {
+    color: white;
+}
+
+.page-button:hover:after {
+    animation-name: bgin;
+    transform: skew(-45deg) translate(-50%);
+}
+
+.page-button:hover {
+    color: #00d2ff;
+}
+
+
+/* button */
+
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #2E9DE5;
+  box-shadow: 0px 15px 20px rgba(46, 157, 229, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.underline-button {
+    font-family: 'Gowun Dodum', sans-serif;
+    display: inline-block;
+    padding: 1em 0;
+    border-radius: 0;
+    color: #aaaaaa;
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+}
+
+.underline-button:before, .underline-button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 0;
+}
+
+.underline-button:before {
+    transition: width 0s ease,background .4s ease;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+}
+
+.underline-button:after {
+    right: 2.2%;
+    bottom: 6px;
+    background: #aaaaaa;
+    transition: width .4s ease;
+}
+
+.underline-button:hover:before {
+    width: 97.8%;
+    background: #aaaaaa;
+    transition: width .4s ease;
+}
+
+.underline-button:hover:after {
+    width: 97.8%;
+    background: 0 0;
+    transition: all 0s ease;
+}
