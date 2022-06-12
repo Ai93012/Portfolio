@@ -3,6 +3,8 @@
 
 h1 {
 	font-size: 48px;
+	font-style: normal;
+	font-weight: 400;
 }
 
 
@@ -17,7 +19,6 @@ h2{
   font-family: 'Gowun Dodum', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 15px;
 }
 
 /* button */
