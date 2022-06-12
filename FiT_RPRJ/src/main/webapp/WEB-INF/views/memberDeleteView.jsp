@@ -39,7 +39,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			
 		})
 	</script>
-	<body>
+	<body align=center>
 		<section id="container">
 			<form action = "/memberDelete" method="POST">
 				
