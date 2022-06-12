@@ -26,49 +26,51 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <div align="center">
 <br><br>
 	<form id="modifyForm" action="/memberUpdate" method="post">
-	<table border=1 width=430>
+	<table>
 	
 	  
 			<tr>
-				<td  align=center class="userId">아이디 </td>
+				<th  align=center class="userId">아이디 </th>
 				<td>  ${member.userId }<input  type="hidden"  name="userId"  value=  ${member.userId }  >  </td>
 			</tr>
 	
 			<tr>
-				<td  align=center class="username">이름 </td>
+				<th  align=center class="username">이름 </th>
 				<td>  <input  type=text  name="userName"  value=  ${member.userName }  ></td>
 			</tr>
 			<tr>
-				<td  align=center class="userPass">비밀번호 </td>
+				<th  align=center class="userPass">비밀번호 </th>
 				<td> <input  type="password"  name="userPass" > </td>
 			</tr>
 			
 			<!-- 
 			<tr>
-				<td  align=center class="npw">새로운 비밀번호 </td>
+				<th  align=center class="npw">새로운 비밀번호 </th>
 				<td> <input  type="password"  name="npwCk" value= ${edit.getUserPass() } ></td>
 			</tr>
 			<tr>
-				<td  align=center class="userPass"> 비밀번호 확인 </td>
+				<th  align=center class="userPass"> 비밀번호 확인 </th>
 				<td> <input  type="password"  name="npwCk" value= ${edit.getUserPass() } ></td>
 			</tr>
 		 -->
 		 
 		 
 			<tr>
-				<td  align=center class="userMail"> 이메일 </td>
+				<th  align=center class="userMail"> 이메일 </th>
 				<td> <input  type="userMail"  name="userMail" value= ${member.userMail } ></td>
 			</tr>
 			<tr>
-				<td  align=center class="arsName"> 배송지 </td>
+				<th  align=center class="arsName"> 배송지 </th>
 				<td> <a href= "/dest"><input type="button" class="button" value="배송지관리" /></a></td>
 			</tr>
 				<tr>
 			
 		</tr>
 		<td colspan=2  align=center> 
-        <a  class="btn"  id="modify_btn">수정 완료</a>
-        <a class="btn" id="cancel_btn">수정 취소</a>
+        <b  class="underline-button"  id="modify_btn">수정 완료</b>
+    </div>
+      <div>
+        <b class="underline-button" id="cancel_btn">수정 취소</b>
 					</div>
 					
 					
