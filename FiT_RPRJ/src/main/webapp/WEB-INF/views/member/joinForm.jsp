@@ -1,120 +1,150 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-
 <!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>JoinForm</title>
-
-
-<!-- web font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <title>로그인 및 회원가입 페이지</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../resources/css/joinform.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="../resources/dist/css/style2.css">
+<style>
+	body{
+	font-family: 'Gowun Dodum', sans-serif;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<a href="https://front.codes/" class="logo" target="_blank">
+	</a>
 
-
-
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+			
+			
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+									<form id ="login_form" method="post">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">회원가입</h4>
+										<div class="name_wrap">
+												<input type="text" class="form-style" name="userName" placeholder="이름" id="name" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="id_wrap">
+												<input type="text" class="form-style" name="userId" placeholder="아이디" id="logid" autocomplete="off">
+												<i class="input-icon uil uil-user-circle"></i>
+											</div>	
+											<input type="button" id="button" class="btn mt-4" value="중복검사">
+											<div class="pw_wrap">
+												<input class="form-style" type="password" name="userPass" placeholder="비밀번호" id="pw" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div class="pwck_wrap">
+												<input type="password" class="form-style" placeholder="비밀번호 확인" id="pwc" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div class="address_wrap">
+											<div class="form-group">
+												<input class="form-style" placeholder="우편번호" name="address1"  type="text" readonly="readonly" autocomplete="off">
+												<i class="input-icon uil uil-envelope"></i>
+											</div>
+											<button type="button" class="btn mt-4" onclick="execPostCode();"><i class="add-search"></i>우편번호 찾기</button>
+											<div class="form-group">
+												<input class="form-style" placeholder="도로명주소" name="address2" type="text"  readonly="readonly" autocomplete="off">
+												<i class="input-icon uil uil-home"></i>
+											</div>
+                                            <div class="form-group">
+												<input type="text" name="address3" class="form-style" placeholder="상세주소" id="logaddressdet" autocomplete="off">
+												<i class="input-icon uil uil-house-user"></i>
+											</div>
+											</div>
+											<div class="usermail_wrap">
+												<input class="form-style" type=email name="userMail" placeholder="이메일" id="mail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+											<input type="submit" class="btn mt-4" id="j_button" value="회원가입" />
+				      					</div>
+				      					</form>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrapper">
+									<form id="join_form" method="post" onsubmit="return finalCheck();" action= "/member/joinForm">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">회원가입</h4>
+											<div class="name_wrap">
+												<input type="text" class="form-style" name="userName" placeholder="이름" id="name" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="id_wrap">
+												<input type="text" class="form-style" name="userId" placeholder="아이디" id="logid" autocomplete="off">
+												<i class="input-icon uil uil-user-circle"></i>
+											</div>	
+											<input type="button" id="button" class="btn mt-4" value="중복검사">
+											<div class="pw_wrap">
+												<input class="form-style" type="password" name="userPass" placeholder="비밀번호" id="pw" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div class="pwck_wrap">
+												<input type="password" class="form-style" placeholder="비밀번호 확인" id="pwc" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div class="address_wrap">
+											<div class="form-group">
+												<input class="form-style" placeholder="우편번호" name="address1"  type="text" readonly="readonly" autocomplete="off">
+												<i class="input-icon uil uil-envelope"></i>
+											</div>
+											<button type="button" class="btn mt-4" onclick="execPostCode();"><i class="add-search"></i>우편번호 찾기</button>
+											<div class="form-group">
+												<input class="form-style" placeholder="도로명주소" name="address2" type="text"  readonly="readonly" autocomplete="off">
+												<i class="input-icon uil uil-home"></i>
+											</div>
+                                            <div class="form-group">
+												<input type="text" name="address3" class="form-style" placeholder="상세주소" id="logaddressdet" autocomplete="off">
+												<i class="input-icon uil uil-house-user"></i>
+											</div>
+											</div>
+											<div class="usermail_wrap">
+												<input class="form-style" type=email name="userMail" placeholder="이메일" id="mail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+											<input type="submit" class="btn mt-4" id="j_button" value="회원가입" />
+				      					</div>
+				      					</form>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- partial -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
 integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </script>
-
-
-
-
-
-</head>
-
-
-<body>
-
-
-<div class="wrapper">
-	<form id="join_form" method="post" onsubmit="return finalCheck();" action= "/member/joinForm">
-
-
-				
-			<div align="center"><h5>회원가입</h5></div> <br>
-				<div align="right"><h1>*은 필수 입력 사항입니다.</h1></div> <br>
-				<hr>	
-				
-				<div align="center">
-				<div class="name_wrap">
-					<div class="username">이름</div>
-					<div class="name_input_box">
-						<input class="name_input" name="userName" id="name"  required />*
-					</div>
-				</div>
-			
-				
-				<br>
-				
-				<div class="id_wrap">
-					<div class="userid">아이디</div>
-					<div class="id_input_box">
-						<input class="id_input" name="userId" id="id"   />*
-					
-					<input type="button" id="button" class="idCk_button" value="중복검사">
-					</div>
-					
-				<br>
-				</div>
-				<div class="pw_wrap">
-					<div class="userpass">비밀번호</div>
-					<div class="pw_input_box">
-							<input class="pw_input" type="password" id="pw" name="userPass"  />*
-					</div>
-				
-				</div>
-				<div class="pwck_wrap">
-					<div class=pwck_wrap">비밀번호 확인</div>
-					<div class="pwck_input_box">
-							<input class="pwck_input" type="password" id="pwc"  />
-					</div>
-					
-				</div>
-				
-				<br>
-			<div class="address_wrap">
-				<div class="form-group">
-					<input class="form-control" placeholder="우편번호" name="address1"  type="text" readonly="readonly">
-				 <button type="button" class="button" onclick="execPostCode();"><i class="add-search"></i> 우편번호 찾기</button>  
-				</div>
-				<div class="form-group">
-					<input class="form-control" placeholder="도로명주소" name="address2" type="text"  readonly="readonly">
-				</div>
-				<div class="form-group">
-					<input class="form-control" placeholder="상세주소" name="address3" type="text" id= "add3" >
-				</div>
-				
-			</div>
-				
-				
-				<div class="usermail_wrap">
-					<div class="usermail">이메일</div>
-					<div class="usermail_input_box">
-							<input class="usermail_input" type=email name="userMail" id="mail"  />*
-					</div>
-				
-				</div>
-				
-				<p>
-				<div class= "join_button_wrap">
-					<input type="submit" class="join_button" id="j_button" value="회원가입" />
-				</div>
-			</div>
-		</form>
-	</div>
-
-	
-	
-
+<script>
+/* 로그인 버튼 클릭 메서드 */
+ 
+$(".login_button").click(function(){
+	/*alert("로그인 버튼 작동");*/
+	/*로그인 메서드 서버 요청 */
+	$("#login_form").attr("action", "/member/loginForm");
+	$("#login_form").submit();	
+}); 
+ 
+</script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>			
 <script>
-
-
 function finalCheck() {
 	
     var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
@@ -122,7 +152,6 @@ function finalCheck() {
     var getName= RegExp(/^[가-힣]+$/);
     var fmt = RegExp(/^\d{6}[1234]\d{6}$/); //형식 설정
   
-
     //아이디 공백 확인
     if($("#id").val() == ""){
       alert("아이디를 입력해주세요");
@@ -137,7 +166,6 @@ function finalCheck() {
       $("#id").focus();
       return false;
     }
-
     //비밀번호 공백 확인
     if($("#pw").val() == ""){
       alert("패스워드를 입력해주세요");
@@ -145,7 +173,6 @@ function finalCheck() {
       return false;
     }
          
-
     //아이디 비밀번호 같음 확인
     if($("#id").val() == $("#pw").val()){
       alert("아이디와 비밀번호가 같습니다");
@@ -199,7 +226,6 @@ function finalCheck() {
       $("#name").focus();
       return false;
     }
-
     //이름 유효성 검사
     if(!getName.test($("#name").val())){
       alert("이름형식에 맞게 입력해주세요")
@@ -207,9 +233,7 @@ function finalCheck() {
       $("#name").focus();
       return false;
     }
-
 }
-
     
   //아이디 중복검사
 	$('.idCk_button').click(function(){
@@ -282,22 +306,13 @@ function finalCheck() {
             }
          }).open();
      }
-
     
     
     
-
-
-
-
-
-
 	
 	
 	</script>
-
-
-
+  <script  src="./script.js"></script>
 
 </body>
 </html>
