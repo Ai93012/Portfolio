@@ -23,14 +23,14 @@
 	<div class="input_wrap" align=center>
 		<label>제목</label>
 		<br><br>
-		<input name="qTitle" style="width: 550px, height: 20px;">
+		<input name="qTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;">
 		
 		</div>
 		   <br><br>
   <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="userName" style="height: 20px;" readonly="readonly"  value="${list.userName}">
+		<input name="userName" style="height: 20px; border-bottom: black 1px solid;" readonly="readonly"  value="${list.userName}">
 
 	</div>
   <br><br>
@@ -38,7 +38,7 @@
   <div class="input_wrap" align=center>
 		<label>내용</label>
     <br><br>
-		<textarea rows="30" cols="100" name="qContent"></textarea>
+		<textarea rows="30" cols="100" name="qContent" style="border: black 1px solid; border-radius: 3px;"></textarea>
 	</div>
   <br><br><br>
   <div class="btn_wrap" align=center>
