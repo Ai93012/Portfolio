@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 
+body,html {
+	min-width:1920px;
+}
+
 
 /* table */
 
@@ -22,7 +26,6 @@ table {
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 24px;
-	table-layout: fixed;
 }
 
 table td {
@@ -40,12 +43,12 @@ th {
 	font-weight: 500;
 }
 
-a {
+.underline {
 	text-decoration: none;
 	color: #000000;
 }
 
-a:HOVER {
+.underline:HOVER {
 	text-decoration: underline;
 	color: #000000;
 }
