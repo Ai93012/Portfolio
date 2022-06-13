@@ -30,7 +30,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		</c:if>
 			<tr>
 				<td colspan="5" style="border: white; text-align: right">
-				<a href="/board/fsReg"><b class="modify-button" >게시글 등록</b></td></a>
+				<a href="/board/fsReg"><b class="underline-button" >게시글 등록</b></td></a>
 			</tr>
 		
 			<tr>
