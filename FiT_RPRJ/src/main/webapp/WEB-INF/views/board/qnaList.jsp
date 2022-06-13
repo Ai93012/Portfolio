@@ -29,7 +29,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			<thead>
 			<tr>
 				<td colspan="5" style="border: white; text-align: right">
-				<a class="modify-button" href="/board/qnaReg">게시글 등록</b></td>
+				<a class="underline-button" href="/board/qnaReg">게시글 등록</b></td>
 			</tr>
 			<tr>
 				<th class="qBno_width">번호</th>
