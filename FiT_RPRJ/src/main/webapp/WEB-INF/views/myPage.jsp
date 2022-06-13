@@ -41,6 +41,5 @@
 <br><br>
 <a href="/memberDeleteView"><button class="d-button">회원탈퇴</button></a>
 <br><br>
-<hr style="width: 70%; height: 1px; background-color: #111111; border: 0;">
   </div>
 </html>
