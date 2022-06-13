@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 
+body,html {
+	min-width:1920px;
+}
+
 
 /* table */
 
