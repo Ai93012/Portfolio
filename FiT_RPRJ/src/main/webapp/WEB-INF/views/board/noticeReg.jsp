@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
 
-<script type="text/javascript" src="/resources/smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <head>
 
 </head>
@@ -23,14 +22,14 @@
 	<div class="input_wrap" align=center>
 		<label>제목</label>
 		<br><br>
-		<input name="nTitle" style="width: 550px, height: 20px;">
+		<input name="nTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;">
 		
 		</div>
 		   <br><br>
   <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="userName" style="height: 20px;" value="${member.userName }" readonly:"readonly">
+		<input name="userName" style="height: 20px; border-bottom: black 1px solid;" value="${member.userName }" readonly:"readonly">
 
 	</div>
   <br><br>
@@ -38,7 +37,7 @@
   <div class="input_wrap" align=center>
 		<label>내용</label>
     <br><br>
-		<textarea rows="30" cols="100" name="nContent"></textarea>
+		<textarea rows="30" cols="100" name="nContent" style="border: black 1px solid;"></textarea>
 	</div>
   <br><br><br>
   <div class="btn_wrap" align=center>
