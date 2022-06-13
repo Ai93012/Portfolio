@@ -31,13 +31,13 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 		<label>제목</label>
 		 <br><br>
-		<input name="qTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.qTitle}"/>' >
+		<input name="qTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;"  value='<c:out value="${pageInfo.qTitle}"/>' >
 	</div>
 	<br><br>
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="aId" style="height: 20px;" readonly="readonly" value='<c:out value="${pageInfo.aId}"/>' >
+		<input name="aId" style="height: 20px; border-bottom: black 1px solid;" readonly="readonly" value='<c:out value="${pageInfo.aId}"/>' >
 		</div>
  	 <br><br>
 		
@@ -45,7 +45,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		
 		<label>내용</label>
  	 <br><br>
-		<textarea rows="30" cols="100" name="qContent" ><c:out value="${pageInfo.qContent}"/></textarea>
+		<textarea rows="30" cols="100" name="qContent" style="border: black 1px solid; border-radius: 3px;"><c:out value="${pageInfo.qContent}"/></textarea>
 	</div>
 	  <br><br><br>
 		<div class="btn_wrap" align=center>
