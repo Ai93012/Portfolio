@@ -42,9 +42,10 @@
 </div>
 <nav id="gnb">
 	<ul>
-		<h5><a href="#"> 전체상품</a></h5>
-		<h5><a href="#"> 공지사항</a></h5>
-		<h5><a href="#">이벤트</a></h5>
-		<h5><a href="#">푸드스토리</a></h5>
+		<h5><a class="none" href="#"> 전체상품</a></h5>
+		<h5><a class="none" href="#"> 공지사항</a></h5>
+		<h5><a class="none" href="#">이벤트</a></h5>
+		<h5><a class="none" href="#">푸드스토리</a></h5>
 	</ul>
 </nav>
+<br><br><br><br><br>
