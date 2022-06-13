@@ -37,7 +37,7 @@ th {
 	font-size: 25px;
 }
 
-.modify-button {
+.underline-button {
     font-family: 'Gowun Dodum', sans-serif;
     display: inline-block;
     padding: 1em 0;
@@ -52,7 +52,7 @@ th {
     position: relative;
 }
 
-.modify-button:before, .modify-button:after {
+.underline-button:before, .underline-button:after {
     content: '';
     display: block;
     position: absolute;
@@ -60,27 +60,27 @@ th {
     width: 0;
 }
 
-.modify-button:before {
+.underline-button:before {
     transition: width 0s ease,background .4s ease;
     left: 0;
     right: 0;
     bottom: 6px;
 }
 
-.modify-button:after {
+.underline-button:after {
     right: 2.2%;
     bottom: 6px;
     background: #aaaaaa;
     transition: width .4s ease;
 }
 
-.modify-button:hover:before {
+.underline-button:hover:before {
     width: 97.8%;
     background: #aaaaaa;
     transition: width .4s ease;
 }
 
-.modify-button:hover:after {
+.underline-button:hover:after {
     width: 97.8%;
     background: 0 0;
     transition: all 0s ease;
