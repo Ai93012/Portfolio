@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 
+body,html {
+	min-width:1920px;
+}
+
+
 h1 {
 	font-size: 48px;
 	font-style: normal;
