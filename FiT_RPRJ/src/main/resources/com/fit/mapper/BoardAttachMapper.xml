@@ -4,18 +4,18 @@
 <!-- Java Code의 인터페이스와 같은 경로와 이름을 namespace에 기술한다. -->
 <mapper namespace="com.fit.mapper.BoardAttachMapper">
 <insert id="insert">
-	insert into tbl_attach (uuid, uploadPath, filename, filetype, bno)
-	values(#{uuid}, #{uploadPath}, #{fileName}, #{fileType}, #{bno})
+	insert into tbl_attach (uuid, uploadPath, filename, filetype, kind, bno)
+	values(#{uuid}, #{uploadPath}, #{fileName}, #{fileType}, #{kind}, #{bno})
 </insert>
 <delete id="delete">
 	delete from tbl_attach where uuid = #{uuid}
 </delete>
 
 <select id="findByBno" resultType="com.fit.model.BoardAttachVO">
-	select * from tbl_attach where bno = #{bno}
+	select * from tbl_attach where kind=#{kind} and bno = #{bno}
 </select>
 <delete id="deleteAll">
-	delete from tbl_attach where bno = #{bno}
+	delete from tbl_attach where kind=#{kind} and bno = #{bno}
 </delete>
 <select id="getOldFiles" resultType="com.fit.model.BoardAttachVO">
 	select * from tbl_attach where uploadPath = to_char(sysdate -1, 'yyyy\mm\dd')

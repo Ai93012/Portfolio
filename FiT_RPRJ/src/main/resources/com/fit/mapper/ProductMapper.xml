@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Java Code의 인터페이스와 같은 경로와 이름을 namespace에 기술한다. -->
+<mapper namespace="com.fit.mapper.ProductMapper">
+<select id="getList" resultType="com.fit.model.ProductVO">
+select /*+ index_desc(product pk_product) */
+*
+from product
+offset (#{pageNum} - 1) * #{amount} rows fetch next #{amount} rows only
+</select>
+
+<select id="getTotalCount" resultType="int">
+	select count(*) from product where num > 0
+</select>
+
+<insert id="insert">
+insert into product (name,price,sale,Detail,delivery,writer,inventory,category)
+values(#{name}, #{price}, #{sale}, #{detail}, #{delivery}, #{writer}, #{inventory}, #{category})
+</insert>
+<insert id="insertSelectKey">
+insert into product (name,price,sale,detail,delivery,writer,inventory,category)
+values(#{name}, #{price}, #{sale}, #{detail}, #{delivery}, #{writer}, #{inventory}, #{category})
+<selectKey keyProperty="num" order="AFTER" resultType="Long">
+select ISEQ$$_77631.currval from dual
+</selectKey>
+</insert>
+
+<select id="read" resultType="com.fit.model.ProductVO">
+select * from product where num = #{num}
+</select>
+</mapper>

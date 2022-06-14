@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.fit.mapper.BoardMapper">
+  
+  
+  
+  <!--  공지 등록 -->
+  
+  <insert id="registerN">
+  
+ insert into notice(nTitle, nContent, nwrt) values (#{nTitle}, #{nContent}, #{nWrt})
+  
+  </insert>
+  
+  <!-- 공지 목록 -->
+  <select id="getListN" resultType="com.fit.model.NoticeVO">
+  	
+  	select * from Notice
+  </select>
+  
+  <!-- 공지 목록(페이징) -->
+  <select id="getListPagingN" resultType="com.fit.model.NoticeVO">
+  	<![CDATA[
+  	
+  	    select nbno, ntitle, ncontent, nwrt, nreg, nhit  from(
+        select /*+INDEX_DESC(notice NOTICE_PK) */ rownum as rn, nbno, ntitle, ncontent, nwrt, nreg, nhit 
+        from notice where rownum <= #{pageNum} * #{amount})
+        
+        where rn > (#{pageNum} -1) * #{amount}
+  	
+  	
+  	]]>
+  	
+ 
+  
+  
+  </select>
+  
+  
+  <!-- 공지 조회 -->
+  <select id="getPageN" resultType ="com.fit.model.NoticeVO">
+  	select * from Notice where nBno = #{nBno}
+  
+  </select>
+  
+  <!-- 공지 수정 -->
+  <update id="modifyN">
+  
+   update notice set nTitle = #{nTitle}, nContent = #{nContent}
+   where nBno = #{nBno}
+  </update>
+  
+  
+  
+  <!-- 공지 삭제 -->
+ <delete id="deleteN">
+ 	delete from notice where nBno = #{nBno}
+ 	
+ </delete>
+  
+
+  
+  
+  <!-- 조회수 -->
+  <update id ="upViewCount">
+  	update notice set nHit = nHit + 1
+  	where nBno = #{nBno}
+  </update>
+  
+  
+  <!-- 게시물 총 갯수 -->
+  <select id="getTotalN" resultType="int">
+  	select count(*) from notice 
+  
+  </select>
+
+  
+  </mapper>
