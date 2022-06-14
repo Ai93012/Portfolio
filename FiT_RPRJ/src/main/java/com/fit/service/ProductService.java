@@ -2,9 +2,10 @@ package com.fit.service;
 
 import java.util.List;
 
+import com.fit.model.BoardAttachVO;
 import com.fit.model.Criteria;
-import com.fit.model.ProductAttachVO;
 import com.fit.model.ProductVO;
+import com.fit.model.UploadForm;
 
 public interface ProductService {
 
@@ -12,6 +13,9 @@ public interface ProductService {
 
 	int getTotal(Criteria cri);
 
-	List<ProductAttachVO> getAttachList(Long pid);
+	List<BoardAttachVO> getAttachList(Long pid);
 
+	void register(UploadForm form);
+
+	ProductVO read(Long num);
 }
