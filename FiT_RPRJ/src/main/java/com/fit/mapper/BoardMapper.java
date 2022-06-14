@@ -7,29 +7,27 @@ import com.fit.model.NoticeVO;
 
 public interface BoardMapper {
 
-	/* °øÁö µî·Ï */
+	/*ê³µì§€ì‚¬í•­ ë“±ë¡*/
 	public void registerN(NoticeVO nv);
 	
-	/*°øÁö ¸ñ·Ï*/
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡ë³´ê¸°*/
 	public List<NoticeVO> getListN();
 	
-	/*°øÁö ¸ñ·Ï(ÆäÀÌÁö Àû¿ë)*/
-	public List<NoticeVO> getListPaging(Criteria cri);
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡ë³´ê¸°(í˜ì´ì§• ì ìš©)*/
+	public List<NoticeVO> getListPagingN(Criteria cri);
 	
 	
-	/*°øÁö Á¶È¸*/
+	/*ê³µì§€ì‚¬í•­ ìƒì„¸ë³´ê¸°*/
 	public NoticeVO getPageN(int nBno);
 	
-	/*°øÁö ¼öÁ¤*/
+	/*ê³µì§€ì‚¬í•­ ê¸€ ìˆ˜ì •*/
 	public int modifyN(NoticeVO nv);
 	
-	/*°øÁö »èÁ¦*/
+	/*ê³µì§€ì‚¬í•­ ì‚­ì œ*/
 	public int deleteN(int nBno);
 	
-	
-	/*°øÁö °Ô½ÃÆÇ ÃÑ °¹¼ö */
-	
-	public int getTotal();
+	/*ê³µì§€ì‚¬í•­ ê²Œì‹œë¬¼ ê¸€ ì´ ê°¯ìˆ˜*/
+	public int getTotalN();
 
 	
 	
