@@ -55,6 +55,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 					<input class="form-control" type="password" id="userPass" name="userPass" />
 				</div>
 			
+			<br><br>
 				<div class="form-group has-feedback">
 					<button class="d-button" id="delete_btn" type="submit">회원탈퇴</button>
 					<button class="button" type="button">취소</button>
