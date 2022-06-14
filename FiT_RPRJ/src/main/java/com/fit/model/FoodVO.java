@@ -5,25 +5,35 @@ import java.sql.Date;
 public class FoodVO {
 	
 	
-	//ÀÛ¼ºÀÚ(È¸¿ø) ¾ÆÀÌµğ
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ ï¿½ë¸˜ï¿½ì” ï¿½ëµ’*/
 	private String userId;
 
-	//°Ô½ÃÆÇ ¹øÈ£
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ æ¹²ï¿½ è¸°ëŠìƒ‡*/
 	private int fBno;
 	
-	//°Ô½ÃÆÇ Á¦¸ñ
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ æ¹²ï¿½ï¿½ì £ï§ï¿½*/
 	private String fTitle;
 	
-	//°Ô½ÃÆÇ ³»¿ë
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ æ¹²ï¿½ ï¿½ê¶¡ï¿½ìŠœ*/
 	private String fContent;
 	
-	//ÀÛ¼º±Û µî·ÏÀÏ
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ æ¹²ï¿½ ï¿½ì˜‰ï¿½ê½¦ï¿½ì”ª*/
 	private Date fReg;
 	
-	//Á¶È¸¼ö
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ æ¹²ï¿½ è­°ê³ ì‰¶ï¿½ë‹”*/
 	private int fHit;
 	
-	//Ã·ºÎÆÄÀÏ
+	public String getfWrt() {
+		return fWrt;
+	}
+
+	public void setfWrt(String fWrt) {
+		this.fWrt = fWrt;
+	}
+
+	private String fWrt;
+	
+	/*ï¿½ë«–ï¿½ë±¶ï¿½ë’ªï¿½ë„—ç”±ï¿½ ï§£â‘¤ï¿½ï¿½ë™†ï¿½ì”ª*/
 	private String fFile;
 
 	public String getUserId() {
@@ -84,9 +94,11 @@ public class FoodVO {
 
 	@Override
 	public String toString() {
-		return "foodVO [userId=" + userId + ", fBno=" + fBno + ", fTitle=" + fTitle + ", fContent=" + fContent
-				+ ", fReg=" + fReg + ", fHit=" + fHit + ", fFile=" + fFile + "]";
+		return "FoodVO [userId=" + userId + ", fBno=" + fBno + ", fTitle=" + fTitle + ", fContent=" + fContent
+				+ ", fReg=" + fReg + ", fHit=" + fHit + ", fWrt=" + fWrt + ", fFile=" + fFile + "]";
 	}
+
+	
 	
 
 	

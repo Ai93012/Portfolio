@@ -33,6 +33,20 @@ public class QnaVO {
 		//조회수
 		private int qHit;
 
+		
+		private String qWrt;
+		
+		
+
+	public String getqWrt() {
+			return qWrt;
+		}
+
+
+		public void setqWrt(String qWrt) {
+			this.qWrt = qWrt;
+		}
+
 
 	public String getaId() {
 		return aId;
@@ -127,8 +141,12 @@ public class QnaVO {
 	@Override
 	public String toString() {
 		return "QnaVO [aId=" + aId + ", userId=" + userId + ", aName=" + aName + ", userName=" + userName + ", qTitle="
-				+ qTitle + ", qContent=" + qContent + ", qReg=" + qReg + ", qBno=" + qBno + ", qHit=" + qHit + "]";
+				+ qTitle + ", qContent=" + qContent + ", qReg=" + qReg + ", qBno=" + qBno + ", qHit=" + qHit + ", qWrt="
+				+ qWrt + "]";
 	}
+
+
+
 	
 	
 	

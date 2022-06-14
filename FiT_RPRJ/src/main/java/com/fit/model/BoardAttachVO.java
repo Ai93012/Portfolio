@@ -12,6 +12,7 @@ public class BoardAttachVO {
 	private String uploadPath;
 	private String fileName; //
 	private boolean fileType;
+	private String kind;
 	private Long bno;
 	
 	public String getFileCallPath() {

@@ -4,27 +4,31 @@ import java.sql.Date;
 
 public class NoticeVO {
 	
-	//ÀÛ¼ºÀÚ(°ü¸®ÀÚ) ¾ÆÀÌµð
+	//ï¿½Û¼ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½Ìµï¿½
 	private String aId;
 
 	
-	//°Ô½ÃÆÇ ¹øÈ£
+	//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 	private int nBno;
 	
-	//°Ô½ÃÆÇ Á¦¸ñ
+	//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private String nTitle;
 	
-	//°Ô½ÃÆÇ ³»¿ë
+	//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private String nContent;
 	
-	//ÀÛ¼º±Û µî·ÏÀÏ
+	//ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	private Date nReg;
 	
-	//Á¶È¸¼ö
+	//ï¿½ï¿½È¸ï¿½ï¿½
 	private int nHit;
 	
-	//Ã·ºÎÆÄÀÏ
+	//Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String nFile;
+	
+	private String nWrt;
+	
+	
 
 	public String getaId() {
 		return aId;
@@ -82,11 +86,21 @@ public class NoticeVO {
 		this.nFile = nFile;
 	}
 
+	public String getnWrt() {
+		return nWrt;
+	}
+
+	public void setnWrt(String nWrt) {
+		this.nWrt = nWrt;
+	}
+
 	@Override
 	public String toString() {
 		return "NoticeVO [aId=" + aId + ", nBno=" + nBno + ", nTitle=" + nTitle + ", nContent=" + nContent + ", nReg="
-				+ nReg + ", nHit=" + nHit + ", nFile=" + nFile + "]";
+				+ nReg + ", nHit=" + nHit + ", nFile=" + nFile + ", nWrt=" + nWrt + "]";
 	}
+	
+	
 
 	
 	

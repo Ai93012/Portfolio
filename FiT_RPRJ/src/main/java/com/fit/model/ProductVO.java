@@ -7,21 +7,19 @@ import lombok.Data;
 
 @Data
 public class ProductVO {
-	private Long pNum;
-	private String pName;
-	private int pPrice;
-	private int pSale;
-	private ProductAttachVO pImage1;
-	private ProductAttachVO pImage2;
-	private String pDetail;
-	private Date pReg;
-	private Date pMode;
-	private String ald;
-	private int pInventory;
-	private String pCategory;
-	private int pReadCount;	//조회수
-	public void setAttachList(List<ProductAttachVO> alist) {
-		// TODO Auto-generated method stub
-		
-	}
+	private Long num;
+	private String name;
+	private int price;
+	private int sale;
+	private String detail;
+	private String delivery;  // 배송정보
+	private Date regDate;
+	private Date modDate;
+	private String writer;
+	private int inventory;
+	private String category;	// 카테고리
+	private int readCount;	//조회수
+
+	private List<BoardAttachVO> attachList;
+//	private BoardAttachVO pImage2;
 }
