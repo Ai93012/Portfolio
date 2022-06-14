@@ -169,18 +169,12 @@ public class MemberController {
 				 return "redirect:/main";
 				    }
 				
-		//회원탈퇴완료 이동
-		@RequestMapping(value = "memberDeleteSuc", method = RequestMethod.GET)
-		public void deletesucGET() {
-					
-					logger.info("탈퇴완료 이동");
-					
-				}
+		
 		
 				
+			
+				
 	
-				
-				
 				
 				
 				
