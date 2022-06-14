@@ -46,20 +46,20 @@ public class UploadController {
 
 	@PostMapping("/uploadFormAction")
 	public void uploadFormAction(UploadForm form, Model model) {
-		log.info("desc= " + form.getDesc());
-		String uploadFolder = Common.UPLOAD_PATH; // 절대 경로를 사용(여러분의 경로를 사용)
-		// 상대 경로를 사용하는 경우는 jsp 파일 업로드시 한적이 있으므로 그것을 참조
-		for (MultipartFile multipartFile : form.getUploadFile()) {
-			log.info("-----------------------------------");
-			log.info("Upload file name: " + multipartFile.getOriginalFilename());
-			log.info("upload file size: " + multipartFile.getSize());
-			File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
-			try {
-				multipartFile.transferTo(saveFile); // 파일을 저장
-			} catch (Exception e) {
-				log.error(e.getMessage());
-			}
-		}
+//		log.info("desc= " + form.getDesc());
+//		String uploadFolder = Common.UPLOAD_PATH; // 절대 경로를 사용(여러분의 경로를 사용)
+//		// 상대 경로를 사용하는 경우는 jsp 파일 업로드시 한적이 있으므로 그것을 참조
+//		for (MultipartFile multipartFile : form.getUploadFile()) {
+//			log.info("-----------------------------------");
+//			log.info("Upload file name: " + multipartFile.getOriginalFilename());
+//			log.info("upload file size: " + multipartFile.getSize());
+//			File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
+//			try {
+//				multipartFile.transferTo(saveFile); // 파일을 저장
+//			} catch (Exception e) {
+//				log.error(e.getMessage());
+//			}
+//		}
 	}
 
 	// Upload 폼을 요청하는 url 처리
@@ -76,7 +76,7 @@ public class UploadController {
 	} // Linux : /, Windows OS : \ -> OS 별로 차이가 있음
 
 	// 인증한 사용자만이 첨부 파일을 추가할 수 있다.
-	
+//	@PreAuthorize("isAuthenticated()")
 	@PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody // json 형식으로 응답을 하겠다
 	public ResponseEntity<List<AttachFileDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {

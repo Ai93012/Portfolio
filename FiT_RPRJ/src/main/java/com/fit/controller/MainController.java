@@ -18,5 +18,14 @@ public class MainController {
 			logger.info("매인페이지로 이동");
 			
 		}
+		
+		
+		//푸터
+		@RequestMapping(value = "/footer", method = RequestMethod.GET)
+		public void mainPageGEfT() {
+			
+			logger.info("이동");
+			
+		}
 	
 }

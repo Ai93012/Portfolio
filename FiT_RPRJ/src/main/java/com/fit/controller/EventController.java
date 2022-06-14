@@ -61,11 +61,11 @@ public class EventController {
 		String uploadFolder = Common.UPLOAD_PATH;
 		String uploadFolderPath = getFolder();
 
-		// 업로드 폴더 생성
+		// �뾽濡쒕뱶 �뤃�뜑 �깮�꽦
 		File uploadPath = new File(uploadFolder, uploadFolderPath);
 		log.info("upload path: " + uploadPath);
-		if (uploadPath.exists() == false) { // 폴더가 존재하지 않을 때만 생성
-			uploadPath.mkdirs(); // 중간 경로에 없는 폴더가 있을 경우, 그것까지도 생성해 준다.
+		if (uploadPath.exists() == false) { // �뤃�뜑媛� 議댁옱�븯吏� �븡�쓣 �븣留� �깮�꽦
+			uploadPath.mkdirs(); // 以묎컙 寃쎈줈�뿉 �뾾�뒗 �뤃�뜑媛� �엳�쓣 寃쎌슦, 洹멸쾬源뚯��룄 �깮�꽦�빐 以��떎.
 		} // make yyyy/MM/dd folder
 
 		MultipartFile multipartFile = form.getUploadFile();
@@ -74,14 +74,14 @@ public class EventController {
 		log.info("upload File Size: " + multipartFile.getSize());
 
 		String uploadFileName = multipartFile.getOriginalFilename();
-		// IE has file path -> 경로 자르기 (전체 경로 중에 파일 이름만 잘라낸다.)
+		// IE has file path -> 寃쎈줈 �옄瑜닿린 (�쟾泥� 寃쎈줈 以묒뿉 �뙆�씪 �씠由꾨쭔 �옒�씪�궦�떎.)
 		uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
 		log.info("only file name: " + uploadFileName);
 
 		banner.setFileName(uploadFileName);
 
-		// 파일이름 중복 방지
-		// 원래 파일 이름도 보존할 수 있다.
+		// �뙆�씪�씠由� 以묐났 諛⑹�
+		// �썝�옒 �뙆�씪 �씠由꾨룄 蹂댁〈�븷 �닔 �엳�떎.
 		UUID uuid = UUID.randomUUID();
 		uploadFileName = uuid.toString() + "_" + uploadFileName;
 
@@ -91,7 +91,7 @@ public class EventController {
 
 			banner.setUuid(uuid.toString());
 			banner.setUploadPath(uploadFolderPath);
-			// 이미지 파일 유형인지 검사
+			// �씠誘몄� �뙆�씪 �쑀�삎�씤吏� 寃��궗
 			if (checkImageType(saveFile)) {
 				banner.setFileType(true);
 				FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_" + uploadFileName));
@@ -116,7 +116,7 @@ public class EventController {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
-		return str.replace("-", File.separator); // File.separator : OS에 따라 다르므로 이렇게 사용
+		return str.replace("-", File.separator); // File.separator : OS�뿉 �뵲�씪 �떎瑜대�濡� �씠�젃寃� �궗�슜
 	}
 	
 	private boolean checkImageType(File file) {
