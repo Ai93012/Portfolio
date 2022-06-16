@@ -6,13 +6,7 @@
   
   <!-- 회원가입 -->
 	<insert id="memberJoin">
-  		
-  		<!-- 
-  		insert into member values(#{userName}, #{userId}, #{userPass}, #{address1}, #{address2}, #{userMail}, sysdate, 0, #{address3}) -->
-  		insert into member(userid, userpass, address1, address2, address3, usermail, userName) values (#{userId}, #{userPass}, #{address1}, #{address2},#{address3}, #{userMail}, #{userName}  )
-  		
-  		
-  		
+  		insert into member values(#{userName}, #{userId}, #{userPass}, #{address1}, #{address2}, #{userMail}, sysdate, 0, #{address3})
   	</insert>
 
   <!-- 로그인 -->
@@ -58,8 +52,14 @@
  		WHERE USERID = #{userId} 	
  	</update>
  	
+ 	<!-- 회원 정보 보기 -->
+ 	<select id = "memberGetList" resultType="com.fit.model.MemberVO">
+ 	
+ 	select * from member where userId = #{userId}
+ 	</select>
  	
 
 
 
+ 	
   </mapper>

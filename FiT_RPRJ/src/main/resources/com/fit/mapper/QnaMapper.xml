@@ -8,7 +8,7 @@
   <!-- 문의사항 게시판 등록 -->
 <insert id="registerQ">
 
-insert into qna(qTitle, qContent) values (#{qTitle}, #{qContent} )
+insert into qna(qTitle, qContent, qwrt) values (#{qTitle}, #{qContent}, #{qWrt} )
 
 </insert>
 
@@ -30,7 +30,7 @@ insert into qna(qTitle, qContent) values (#{qTitle}, #{qContent} )
   <!-- 문의사항 글 수정 -->
   <update id="modifyQ">
   
-  update qna set qTitle = #{qTitle}, qContent = #{qContent}
+  update qna set qTitle = #{qTitle}, qContent = #{qContent}, qWrt = #{qWrt}
    where qBno = #{qBno}
   
   </update>
@@ -40,6 +40,28 @@ insert into qna(qTitle, qContent) values (#{qTitle}, #{qContent} )
  	delete from qna where qBno = #{qBno}
  	
  </delete>
+ 
+  <!-- 문의사항 목록(페이징) -->
+  <select id="getListPagingQ" resultType="com.fit.model.QnaVO">
+  	<![CDATA[
+  	
+  	   select qbno, qtitle, qcontent, qwrt, qreg, qhit  from(
+        select /*+INDEX_DESC(qna QNA_PK) */ rownum as rn, qbno, qtitle, qcontent, qwrt, qreg, qhit 
+        from qna where rownum <= #{pageNum} * #{amount})
+        
+        where rn > (#{pageNum} -1) * #{amount}
+  	
+  	
+  	]]>
+  
+  </select>
+  
+  
+   <!-- 게시물 총 갯수 -->
+  <select id="getTotalQ" resultType="int">
+  	select count(*) from qna
+  
+  </select>
   
   
   </mapper>

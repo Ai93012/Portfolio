@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Java Code의 인터페이스와 같은 경로와 이름을 namespace에 기술한다. -->
+<mapper namespace="com.fit.mapper.NewEventMapper">
+<select id="getListWithPaging2"
+	resultType="com.fit.model.NewEventVO">
+	select /*+ index_desc(nevent pk_event) */
+	*
+	from nevent
+	offset (#{pageNum} - 1) * #{amount} rows fetch next #{amount} rows only
+</select>
+
+<select id="getTotalCount" resultType="int">
+	select count(*) from nevent where bno > 0
+</select>
+
+<insert id="insertSelectKey">
+insert into nevent (title, content, aid) 
+values(#{title}, #{content}, #{aid})
+<selectKey keyProperty="bno" order="AFTER" resultType="long">
+select ISEQ$$_75777.currval from dual  
+ </selectKey>
+</insert>
+
+<select id="getMainEvent" resultType="com.fit.model.NewEventVO">
+	select /*+ index_desc(nevent pk_event) */
+	*
+	from nevent
+	offset 0 rows fetch next 3 rows only
+</select>
+
+<select id="read" resultType="com.fit.model.NewEventVO">
+	select * from nevent where bno = #{bno}
+</select>
+</mapper>

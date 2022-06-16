@@ -7,6 +7,10 @@
 select /*+ index_desc(product pk_product) */
 *
 from product
+<if test="keyword != null">
+where category = #{keyword}
+</if>
+
 offset (#{pageNum} - 1) * #{amount} rows fetch next #{amount} rows only
 </select>
 
@@ -22,7 +26,7 @@ values(#{name}, #{price}, #{sale}, #{detail}, #{delivery}, #{writer}, #{inventor
 insert into product (name,price,sale,detail,delivery,writer,inventory,category)
 values(#{name}, #{price}, #{sale}, #{detail}, #{delivery}, #{writer}, #{inventory}, #{category})
 <selectKey keyProperty="num" order="AFTER" resultType="Long">
-select ISEQ$$_77631.currval from dual
+select ISEQ$$_75772.currval from dual
 </selectKey>
 </insert>
 
