@@ -7,27 +7,27 @@ import com.fit.model.NoticeVO;
 
 public interface BoardService {
 
-	/*°øÁö µî·Ï*/
+	/*ê³µì§€ì‚¬í•­ ë“±ë¡*/
 	public void registerN(NoticeVO nv);
 	
-	/*°øÁö ¸ñ·Ï*/
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡ë³´ê¸°*/
 	public List<NoticeVO> getListN();
 	
-	/*°øÁö ¸ñ·Ï(ÆäÀÌÂ¡)*/
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡ë³´ê¸°(í˜ì´ì§• ì ìš©)*/
 	public List<NoticeVO> getListPaging(Criteria cri);
 	
-	/*°øÁö Á¶È¸*/
+	/*ê³µì§€ì‚¬í•­ ìƒì„¸ë³´ê¸°*/
 	public NoticeVO getPageN(int nBno);
 	
-	/*°øÁö ¼öÁ¤*/
+	/*ê³µì§€ì‚¬í•­ ìˆ˜ì •*/
 	public int modifyN(NoticeVO nv);
 	
-	/*°øÁö »èÁ¦*/
+	/*ê³µì§€ì‚¬í•­ ì‚­ì œ*/
 	public int deleteN(int nBno);
 	
-	
-	/*°Ô½ÃÆÇ ÃÑ °¹¼ö*/
-	public int getTotal();
+	/*ê³µì§€ì‚¬í•­ ê²Œì‹œë¬¼ ì´ ê°¯ìˆ˜*/
+	public int getTotalN();
+
 	
 	
 }

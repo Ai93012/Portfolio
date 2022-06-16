@@ -22,7 +22,6 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnailator;
 
-
 @Service
 @Log4j
 public class ProductServiceImpl implements ProductService {
@@ -58,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
 	@Transactional
 	@Override
 	public void register(UploadForm form) {
-		//�긽�뭹�젙蹂대�� �뜲�씠�꽣踰좎씠�뒪 �뀒�씠釉붿뿉 ���옣
+		//상품정보를 데이터베이스 테이블에 저장
 		ProductVO product = form.toProduct();
 		mapper.insertSelectKey(product);
 		form.setNum(product.getNum());
@@ -70,8 +69,8 @@ public class ProductServiceImpl implements ProductService {
 		uploadFolderPath = Common.getFolder();
 		uploadPath = new File(uploadFolder, uploadFolderPath);
 		log.info("upload path: " + uploadPath);
-		if (uploadPath.exists() == false) { // �뤃�뜑媛� 議댁옱�븯吏� �븡�쓣 �븣留� �깮�꽦
-			uploadPath.mkdirs(); // 以묎컙 寃쎈줈�뿉 �뾾�뒗 �뤃�뜑媛� �엳�쓣 寃쎌슦, 洹멸쾬源뚯��룄 �깮�꽦�빐 以��떎.
+		if (uploadPath.exists() == false) { // 폴더가 존재하지 않을 때만 생성
+			uploadPath.mkdirs(); // 중간 경로에 없는 폴더가 있을 경우, 그것까지도 생성해 준다.
 		}
 		MultipartFile pImage1 = form.getImage1();
 		if(pImage1.getSize()>0) {
@@ -89,8 +88,8 @@ public class ProductServiceImpl implements ProductService {
 			attach.setFileType(true);
 			attachMapper.insert(attach);
 		}
-		//�씠誘몄��뙆�씪�쓣 ���옣
-		//�씠誘몄��뙆�씪 �젙蹂대�� �뜲�씠�꽣踰좎씠�뒪 �뀒�씠釉붿뿉 ���옣
+		//이미지파일을 저장
+		//이미지파일 정보를 데이터베이스 테이블에 저장
 	}
 	
 	private BoardAttachVO storeImageFileAndTable(MultipartFile multipartFile) {
@@ -100,13 +99,13 @@ public class ProductServiceImpl implements ProductService {
 		log.info("upload File Size: " + multipartFile.getSize());
 		
 		String uploadFileName = multipartFile.getOriginalFilename();
-		// IE has file path -> 寃쎈줈 �옄瑜닿린 (�쟾泥� 寃쎈줈 以묒뿉 �뙆�씪 �씠由꾨쭔 �옒�씪�궦�떎.)
+		// IE has file path -> 경로 자르기 (전체 경로 중에 파일 이름만 잘라낸다.)
 		uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
 		log.info("only file name: " + uploadFileName);
 		
 		attach.setFileName(uploadFileName);
-		// �뙆�씪�씠由� 以묐났 諛⑹�
-		// �썝�옒 �뙆�씪 �씠由꾨룄 蹂댁〈�븷 �닔 �엳�떎.
+		// 파일이름 중복 방지
+		// 원래 파일 이름도 보존할 수 있다.
 		UUID uuid = UUID.randomUUID();
 		uploadFileName = uuid.toString() + "_" + uploadFileName;
 
@@ -115,7 +114,7 @@ public class ProductServiceImpl implements ProductService {
 			multipartFile.transferTo(saveFile);
 			attach.setUuid(uuid.toString());
 			attach.setUploadPath(uploadFolderPath);
-			// �씠誘몄� �뙆�씪 �쑀�삎�씤吏� 寃��궗
+			// 이미지 파일 유형인지 검사
 			if (Common.checkImageType(saveFile)) {
 				FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_" + uploadFileName));
 				Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 100, 100);

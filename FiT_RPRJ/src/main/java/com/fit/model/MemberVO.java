@@ -4,14 +4,6 @@ import java.sql.Date;
 
 public class MemberVO {
 	
-	public int getmNum() {
-		return mNum;
-	}
-
-	public void setmNum(int mNum) {
-		this.mNum = mNum;
-	}
-
 	//회원 이름
 	private String userName;
 	
@@ -33,19 +25,14 @@ public class MemberVO {
 	//회원 가입일
 	private Date regDate;
 	
-	//회원 넘버
-	private int mNum;
-	
 	//관리자 구분(0: 일반사용자, 1:관리자)
 	private int adminCk;
 	
-	
-
 	@Override
 	public String toString() {
 		return "MemberVO [userName=" + userName + ", userId=" + userId + ", userPass=" + userPass + ", address1="
-				+ address1 + ", address2=" + address2 + ", userMail=" + userMail + ", regDate=" + regDate + ", mNum="
-				+ mNum + ", adminCk=" + adminCk + ", address3=" + address3 + "]";
+				+ address1 + ", address2=" + address2 + ", userMail=" + userMail + ", regDate=" + regDate + ", adminCk="
+				+ adminCk + ", address3=" + address3 + "]";
 	}
 
 	public String getUserName() {

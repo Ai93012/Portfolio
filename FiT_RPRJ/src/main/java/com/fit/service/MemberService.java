@@ -1,5 +1,8 @@
 package com.fit.service;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
+
 import com.fit.model.MemberVO;
 
 public interface MemberService {
@@ -25,7 +28,8 @@ public interface MemberService {
 	public void memberDelete(MemberVO member);
 	
 	
-	
+	//아이디 찾기 
+	public String findId(String userMail);
 	
 	
 	

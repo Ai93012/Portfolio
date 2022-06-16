@@ -1,6 +1,7 @@
 package com.fit.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,8 +20,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fit.mapper.MemberMapper;
+import com.fit.model.Criteria;
 import com.fit.model.MemAddressVO;
 import com.fit.model.MemberVO;
+import com.fit.model.PageMakeDTO;
 import com.fit.service.MemDelService;
 import com.fit.service.MemberService;
 
@@ -36,29 +39,23 @@ public class PageController {
 
 		
 		
-		//마이페이지 진입
+		//������������ �̵�
 		@RequestMapping(value = "myPage", method = RequestMethod.GET)
 		public void myPgGET() {
 			
-			logger.info("마이 페이지 진입");
+			logger.info("������������ �̵�");
 			
 		}
 		
 	
 		
-		//아이디 찾기
-		@RequestMapping(value = "userSearch", method = RequestMethod.GET)
-		public void findIdGET() {
-			
-			logger.info("아이디 찾기 ");
-			
-		}
 		
-		//배송지 관리 
+		
+		//����� ���� �������� �̵�
 		@RequestMapping(value = "dest", method = RequestMethod.GET)
 		public void viewAddDelGET() {
 					
-			logger.info("배송지 관리 페이지");
+			logger.info("����� ���� �������� �̵�");
 		
 
 		}
@@ -66,16 +63,16 @@ public class PageController {
 		@Autowired
 		private MemDelService memdelservice;
 		
-		//배송지 수정
+		//����� ���
 		@RequestMapping(value="/dest", method=RequestMethod.POST)
 		public String AddDelPOST(MemAddressVO memad) throws Exception{
 			
-			logger.info("dest 진입");
+			logger.info("dest ����");
 
 			
-			//배송지 삭제
+			//����� ��� ����
 			memdelservice.addMemDel(memad);
-			logger.info("배송지 삭제");
+			logger.info("��� ����");
 			return "redirect:/dest";
 			
 			
@@ -109,41 +106,79 @@ public class PageController {
 		private MemberService service;
 		
 	    
-	    @PostMapping("profile")
+	    @PostMapping("/memberUpdate")
 	    public String userModifyPOST(MemberVO member, RedirectAttributes rttr) {
 	    	service.memberUpdate(member);
 	    	rttr.addFlashAttribute("result", "modify success");
 	    	return "redirect:/profile";
 	    }
 	
-	  //ȸ��Ż��
+	    
+	    @RequestMapping(value = "memberDeleteView", method = RequestMethod.GET)
+		public void memberDeleteGET() {
+			
+			logger.info("회원탈퇴 페이지 진입");
+			
+		}
 		
-	  	
-	  		@RequestMapping(value="memberDelete", method=RequestMethod.GET)
-	  		
-	  		public String memberDeleteGET(MemberVO member) throws Exception{
-	  			
-	  			logger.info("ȸ��Ż�� ����");
-	  			
-	  		return "/memberDelete";	
-	  			
-	  		}
-	  		
-	  		
-	  		@PostMapping("/memberDelete")
-	  		public String memberDeletePost(MemberVO member, RedirectAttributes rttr) {
-	  			service.memberDelete(member);
-	  			rttr.addFlashAttribute("result", "delete success");
-	  			
-	  			return "redirect:/main";
-	  		}
+		
+		@PostMapping("/memberDelete")
+	    public String userDeletePOST(MemberVO member, RedirectAttributes rttr, HttpSession session) {
+	    	service.memberDelete(member);
+	    	rttr.addFlashAttribute("result", "delete success");
+			 session.invalidate();
+	    	return "redirect:member/memberDeleteSuc";
+	    }
+		
+		
+		
+		//������������ �̵�
+		@RequestMapping(value = "home2", method = RequestMethod.GET)
+		public void homPgGET() {
+			
+			logger.info("������������ �̵�");
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		//���̵�, ��й�ȣ ã�� �������� �̵�
+				@RequestMapping(value = "userSearch", method = RequestMethod.GET)
+				public void findIdGET() {
+					
+					logger.info("아이디, 비밀번호 찾기 진입");
+					
+				}
+				
+			
+				
+				@PostMapping("/findId")
+				
+				public void findIdSearchPOST(Model model, MemberVO vo) {
+					log.info("findIdSearchPOST");
+					
+					//아이디 찾기 서비스 실행
+					service.findId(vo.getUserMail());
+					model.addAttribute("pageInfo", vo.getUserName());	
+				
+					String result = service.findId(vo.getUserId());
+					logger.info("아이디 찾기 서비스 실행");
+					
+					
+				}
 
 		
 	}
 		
-		
-		
 
+
+
+
+		
 		
 		
 		

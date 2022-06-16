@@ -8,24 +8,29 @@ import com.fit.model.NoticeVO;
 
 public interface FoodStoryMapper {
 
-	/* Çªµå½ºÅä¸® µî·Ï */
+	/* Food ìŠ¤í† ë¦¬ ì‘ì„±*/
 	public void registerF(FoodVO fv);
 	
-	/*Çªµå½ºÅä¸® ¸ñ·Ï*/
+	/*Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ï¿½*/
 	public List<FoodVO> getListF();
 	
+	public List<FoodVO> getListPagingF(Criteria cri);
 	
-	/*Çªµå½ºÅä¸® Á¶È¸*/
+	/*Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½È¸*/
 	public FoodVO getPageF(int fBno);
 	
 	
-	/*Çªµå½ºÅä¸® »èÁ¦*/
+	/*Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ï¿½ï¿½*/
 	public int deleteF(int fBno);
 	
 	
-	/*Çªµå½ºÅä¸® ¼öÁ¤*/
+	/*Çªï¿½å½ºï¿½ä¸® ï¿½ï¿½ï¿½ï¿½*/
 	public int modifyF(FoodVO fv);
 	
+	
+	
+	/*í‘¸ë“œìŠ¤í† ë¦¬ ê²Œì‹œë¬¼ ê¸€ ì´ ê°¯ìˆ˜*/
+	public int getTotalF();
 	
 	
 }

@@ -21,10 +21,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fit.model.BoardAttachVO;
 import com.fit.model.Criteria;
-import com.fit.model.EventVO;
+import com.fit.model.NewEventVO;
 import com.fit.model.PageDTO;
 import com.fit.model.UploadForm2;
-import com.fit.service.EventService;
+
+import com.fit.service.NewEventService;
 import com.fit.utils.Common;
 
 import lombok.AllArgsConstructor;
@@ -36,12 +37,12 @@ import net.coobird.thumbnailator.Thumbnailator;
 @Log4j
 @AllArgsConstructor
 public class EventController {
-	private EventService service;
+	private NewEventService service;
 
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		log.info("list: " +cri);
-		List<EventVO> list = service.getList(cri);
+		List<NewEventVO> list = service.getList(cri);
 		model.addAttribute("list", list);
 		int total = service.getTotal(cri);
 		log.info("total: " + total);
@@ -101,7 +102,7 @@ public class EventController {
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		EventVO event = new EventVO();
+		NewEventVO event = new NewEventVO();
 		event.setAid(form.getAid());
 		event.setTitle(form.getTitle());
 		event.setContent(form.getContent());
@@ -110,6 +111,7 @@ public class EventController {
 		event.setBannerList(list);
 		service.register(event);
 		return "redirect:/event/list";
+	
 	}
 	
 	private String getFolder() {
@@ -135,7 +137,7 @@ public class EventController {
 	@GetMapping("/get")
 	public void get(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("get..." + bno);
-		EventVO event = service.get(bno);
+	NewEventVO event = service.get(bno);
 		model.addAttribute("event", event);
 	}
 }

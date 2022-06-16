@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fit.mapper.QnaMapper;
+import com.fit.model.Criteria;
+import com.fit.model.NoticeVO;
 import com.fit.model.QnaVO;
 
 
@@ -25,22 +27,36 @@ public class QnaServiceImpl implements QnaService {
 	
 	}
 	
-	/*¹®ÀÇ»çÇ× Á¶È¸ */
+	/*ë¬¸ì˜ì‚¬í•­ ëª©ë¡(í˜ì´ì§•)*/
+	
+	@Override
+	public List<QnaVO> getListPagingQ(Criteria cri) {
+		return mapper.getListPagingQ(cri);
+	}
+	
+	/*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ */
 	@Override
 	public QnaVO getPageQ(int qBno) {
 		return mapper.getPageQ(qBno);
 	}
 	
-	//¹®ÀÇ»çÇ× »èÁ¦
+	//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int deleteQ(int qBno) {
 		return mapper.deleteQ(qBno);
 	}
 	
-	//¹®ÀÇ»çÇ× ¼öÁ¤
+	//ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int modifyQ(QnaVO qv) {
 		return mapper.modifyQ(qv);
+	}
+	
+	
+	/*ë¬¸ì˜ì‚¬í•­ ê²Œì‹œë¬¼ ì´ ê°¯ìˆ˜*/
+	@Override
+	public int getTotalQ() {
+		return mapper.getTotalQ();
 	}
 	
 }

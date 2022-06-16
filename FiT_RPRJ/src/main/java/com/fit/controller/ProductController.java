@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fit.model.Criteria;
@@ -59,4 +60,17 @@ public class ProductController {
 		
 		model.addAttribute("product", product);
 	}
+	
+	@PostMapping("/plist")
+	public String plist(String category, Model model) {
+		log.info("plist: " +category);
+		Criteria cri = new Criteria(1, 8);
+		cri.setType("category");
+		cri.setKeyword(category);
+		
+		List<ProductVO> list = productService.getList(cri);
+		model.addAttribute("list", list);
+		return "/product/product";
+	}
+
 }

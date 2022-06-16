@@ -28,7 +28,7 @@ public class NoticeVO {
 	
 	private String nWrt;
 	
-	
+	private String userName;
 
 	public String getaId() {
 		return aId;
@@ -94,11 +94,22 @@ public class NoticeVO {
 		this.nWrt = nWrt;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	@Override
 	public String toString() {
 		return "NoticeVO [aId=" + aId + ", nBno=" + nBno + ", nTitle=" + nTitle + ", nContent=" + nContent + ", nReg="
-				+ nReg + ", nHit=" + nHit + ", nFile=" + nFile + ", nWrt=" + nWrt + "]";
+				+ nReg + ", nHit=" + nHit + ", nFile=" + nFile + ", nWrt=" + nWrt + ", userName=" + userName + "]";
 	}
+	
+	
+
 	
 	
 

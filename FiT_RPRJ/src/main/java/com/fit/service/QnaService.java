@@ -5,25 +5,31 @@ package com.fit.service;
 
 import java.util.List;
 
-
+import com.fit.model.Criteria;
+import com.fit.model.NoticeVO;
 import com.fit.model.QnaVO;
 
 public interface QnaService {
 	
-	/*¹®ÀÇ»çÇ× µî·Ï*/
+	/*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½*/
 	public void registerQ(QnaVO qv);
 
-	/*¹®ÀÇ»çÇ× ¸ñ·Ï*/
+	/*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½*/
 	public List<QnaVO> getListQ();
 	
-	/*¹®ÀÇ»çÇ× Á¶È¸*/
+	public List<QnaVO> getListPagingQ(Criteria cri);
+	
+	/*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½È¸*/
 	public QnaVO getPageQ(int qBno);
 	
-	/*¹®ÀÇ»çÇ× »èÁ¦ */
+	/*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
     public int deleteQ(int qBno);
     
-    /*¹®ÀÇ»çÇ× ±Û ¼öÁ¤*/
+    /*ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
     public int modifyQ(QnaVO qv);
+    
+
+	public int getTotalQ();
 	
 	
 }

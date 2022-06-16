@@ -65,6 +65,12 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	
+	//아이디 찾기
+	@Override
+	public String findId(String userMail) {
+		return membermapper.findId(userMail);
+	}
+	
 	
 
 	/* ȸ�� Ż��*/

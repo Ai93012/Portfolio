@@ -29,6 +29,8 @@ public interface BoardMapper {
 	/*공지사항 게시물 글 총 갯수*/
 	public int getTotalN();
 
+	public int upViewCount(int nBno);
+
 	
 	
 	

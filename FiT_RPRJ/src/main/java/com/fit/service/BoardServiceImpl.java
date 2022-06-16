@@ -14,51 +14,55 @@ public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardMapper mapper;
+
+	
+	/*ê³µì§€ì‚¬í•­ ë“±ë¡*/
 	@Override
 	public void registerN(NoticeVO nv) {
 		
 		mapper.registerN(nv);
 	}
 	
-	//°øÁö ¸ñ·Ï
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡*/
 	
 	@Override
 	public List<NoticeVO> getListN() {
 		return mapper.getListN();
 	}
 	
-	//°øÁö ¸ñ·Ï(ÆäÀÌÂ¡)
+	/*ê³µì§€ì‚¬í•­ ëª©ë¡(í˜ì´ì§•)*/
 	
 	@Override
 	public List<NoticeVO> getListPaging(Criteria cri) {
-		return mapper.getListPaging(cri);
+		return mapper.getListPagingN(cri);
 	}
 	
 	
-	/*°øÁö Á¶È¸ */
+	/*ê³µì§€ì‚¬í•­ ìƒì„¸ë³´ê¸°*/
 	@Override
 	public NoticeVO getPageN(int nBno) {
 		return mapper.getPageN(nBno);
 	}
 	
-	/*°øÁö ¼öÁ¤*/
+	/*ê³µì§€ì‚¬í•­ ìˆ˜ì •*/
 	@Override
 	public int modifyN(NoticeVO nv) {
 		return mapper.modifyN(nv);
 		
 	}
 	
-	/*°øÁö »èÁ¦*/
+	/*ê³µì§€ì‚¬í•­ ì‚­ì œ*/
 	@Override
 	public int deleteN(int nBno) {
 		return mapper.deleteN(nBno);
 	}
 	
-	/*°øÁö °Ô½ÃÆÇ ÃÑ °¹¼ö*/
+	/*ê³µì§€ì‚¬í•­ ê²Œì‹œë¬¼ ì´ ê°¯ìˆ˜*/
 	@Override
-	public int getTotal() {
-		return mapper.getTotal();
+	public int getTotalN() {
+		return mapper.getTotalN();
 	}
+	
 	
 	
 	}
