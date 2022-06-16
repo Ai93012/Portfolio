@@ -107,7 +107,7 @@ h6 span{
 }
 .card-front, .card-back {
   width: 100%;
-  height: 100%;
+  height: 150%;
   background-color: #ffffff;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -150,7 +150,7 @@ h6 span{
 .form-style {
   padding: 13px 20px;
   padding-left: 55px;
-  height: 48px;
+  height: 43px;
   width: 100%;
   font-weight: 500;
   border-radius: 4px;
@@ -177,7 +177,7 @@ h6 span{
   left: 18px;
   height: 48px;
   font-size: 24px;
-  line-height: 48px;
+  line-height: 43px;
   text-align: left;
   color: #a7ebff;
   -webkit-transition: all 200ms linear;
@@ -231,7 +231,7 @@ h6 span{
 
 .btn{  
   border-radius: 4px;
-  height: 44px;
+  height: 41px;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -255,7 +255,6 @@ h6 span{
   border: none;
   background-color: #a7ebff;
   color: #102770;
-  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
 .btn:active,
 .btn:focus{  
