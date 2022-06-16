@@ -2,9 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../header.jsp"%>  
+<link rel="stylesheet" href="../resources/css/style.css">
+
+
+
 <html>
 <head>
-<title>Home</title>
+<meta charset="UTF-8">
+<title>이벤트 목록 페이지</title>
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/home.js"></script>
 <link rel="stylesheet" href="/resources/css/home.css">
@@ -15,18 +21,24 @@
 	rel="stylesheet">
 </head>
 <body>
-	<div id="wrapper">
+		
 		<header>
-			<jsp:include page="../include/header.jsp"></jsp:include>
+	
 		</header>
 		<section>
-			<h1>이벤트</h1>
-			<button id="regBtn" type="button" onclick="location.href='/event/register'">
-			이벤트 등록</button>
+		<div id="wrap" align="center">
+		<h6>이벤트</h6>
+			
+	
 			<table width="100%">
 				<thead>
+				
+			<tr>
+				<td colspan="5" style="border: white; text-align: right">
+				<a href="/event/register"><b class="underline-button" id=regBtn>이벤트 등록</b></td> </a>
+			</tr>
 					<tr>
-						<th>#번호</th>
+						<th>번호</th>
 						<th>제목</th>
 						<th>작성일</th>
 						<th>작성자</th>
@@ -34,10 +46,14 @@
 					</tr>
 				</thead>
 				<c:forEach items="${list}" var="ev">
-					<tr>
-						<td colspan="5">${ev.bno}</td>
-						<td><a class="move" href='${ev.bno}'>${ev.title}</a></td>
+						<td>${ev.bno}</td>
+						<td>
+						<a class="underline" href='/event/get?bno=<c:out value="${ev.bno}"/>'>
+								<c:out value="${ev.title}"/>
+						</a>
+						</td>
 						<td><fmt:formatDate value="${ev.reg}" pattern="yyyy-MM-dd" /></td>
+						
 						<td>${ev.aid}</td>
 						<td>${ev.hit}</td>
 					</tr>
@@ -45,7 +61,7 @@
 			</table>
 		</section>
 		<footer>
-			<jsp:include page="../include/footer.jsp"></jsp:include>
+		
 		</footer>
 	</div>
 </body>

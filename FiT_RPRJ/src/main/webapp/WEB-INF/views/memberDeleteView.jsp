@@ -1,13 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="header.jsp"%>  
 <html>
 	<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/dist/css/delstyle.css">
+<link rel="stylesheet" href="../resources/css/delstyle.css">
+		
+		
+		
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
 integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </script>
@@ -54,7 +59,6 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 					<label class="control-label" for="userPass">비밀번호</label>
 					<input class="form-control" type="password" id="userPass" name="userPass" />
 				</div>
-			
 			<br><br>
 				<div class="form-group has-feedback">
 					<button class="d-button" id="delete_btn" type="submit">회원탈퇴</button>
@@ -67,7 +71,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 				</c:if>
 			</div>
 		</section>
-		
+<%@ include file="footer.jsp"%>  	
 	</body>
 	
 </html>

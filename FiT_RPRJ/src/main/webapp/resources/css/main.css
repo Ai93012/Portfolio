@@ -1,0 +1,214 @@
+/* header */
+
+
+/* FIT ë¡œê³  M */
+
+
+h1 {
+/* header */
+
+
+/* FIT ·Î°í M */
+
+
+h1 {
+   background: url(FIT ·Î°í.png);
+}
+
+
+/* FIT ·Î°í S */
+
+
+h2 {
+   background: url(FIT ·Î°í.png);
+}
+
+h3 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+}
+
+
+/* login image */
+
+
+h4 {
+	background: url(log-in.png);
+}
+
+
+/* login text */
+
+
+h5 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+}
+
+
+/* join image */
+
+
+h6 {
+	background: url(add-user.png);
+}
+
+
+/* join text */
+
+
+h7 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+	}
+
+
+/* qna image */
+
+
+h8 {
+	background: url(headphones.png);
+	}
+
+
+/* qna text */
+
+
+h9 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+}
+
+
+/* order view image */
+
+
+h10 {
+	background: url(file.png);
+}
+
+
+/* order view text */
+
+
+h11 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+	}
+
+
+/* menu text*/
+
+
+h12 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 39px;
+	color: #000000;
+}
+
+
+/* menu box */
+
+
+p.important {
+	border-bottom: 1px solid #000000
+}
+
+
+/* table */
+
+
+h5 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 58px;
+	color: #000000;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+table td {
+	border: #333333 solid 1px;
+	padding: 5px;
+}
+
+table th {
+	border: #111111 solid 1px;
+	padding: 5px;
+}
+
+th {
+	background: #fafafa;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:HOVER {
+	text-decoration: underline;
+	color: #808080;
+}
+
+
+/* button */
+
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #2E9DE5;
+  box-shadow: 0px 15px 20px rgba(46, 157, 229, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

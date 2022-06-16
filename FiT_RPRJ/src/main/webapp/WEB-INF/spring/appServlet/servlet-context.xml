@@ -11,10 +11,20 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	<!-- 인터셉터 적용 -->
+	<interceptors>
+	 <interceptor>
+            <mapping path="/cart/**"/>
+            <exclude-mapping path="/cart/add/"/>
+            <beans:bean id="CartIntreceptor" class="com.fit.interceptor.CartInterceptor"></beans:bean>
+        </interceptor>
+	</interceptors>
 	
 
 
@@ -32,5 +42,6 @@
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 	</beans:bean>
 	
-	
 </beans:beans>
+
+

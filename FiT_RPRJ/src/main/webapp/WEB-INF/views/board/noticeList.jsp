@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../header.jsp"%>
     
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/dist/css/style.css">
+<link rel="stylesheet" href="../resources/css/style.css">
     
 <!DOCTYPE html>
 <html>
@@ -46,13 +47,13 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		<c:forEach items="${list}" var="list">
 				<td><c:out value="${list.nBno}"/></td>
 				<td>
-					<a class="move" href='/board/notice?nBno=<c:out value="${list.nBno}"/>'>
+					<a class="underline" href='/board/notice?nBno=<c:out value="${list.nBno}"/>'>
 						<c:out value="${list.nTitle}"/>
 					</a>
 				</td>
-				<td><c:out value="${list.aId}"/></td> 
+				<td><c:out value="${list.nWrt}"/></td> 
 				<td><c:out value="${list.nReg}"/></td>	
-				<td><c:out value="${list.nHit }"/></td>			
+				<td><c:out value="${list.nHit}"/></td>			
 			</tr>
 		</c:forEach>
 		</div>

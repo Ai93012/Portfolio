@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="header.jsp"%>  
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/prostyle.css">
+<link rel="stylesheet" href="../resources/css/style.css">
 
 <!DOCTYPE html>
 <html>
@@ -26,51 +28,49 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <div align="center">
 <br><br>
 	<form id="modifyForm" action="/memberUpdate" method="post">
-	<table>
+	<table border=1 width=430>
 	
 	  
 			<tr>
-				<th  align=center class="userId">아이디 </th>
+				<td  align=center class="userId">아이디 </td>
 				<td>  ${member.userId }<input  type="hidden"  name="userId"  value=  ${member.userId }  >  </td>
 			</tr>
 	
 			<tr>
-				<th  align=center class="username">이름 </th>
+				<td  align=center class="username">이름 </td>
 				<td>  <input  type=text  name="userName"  value=  ${member.userName }  ></td>
 			</tr>
 			<tr>
-				<th  align=center class="userPass">비밀번호 </th>
+				<td  align=center class="userPass">비밀번호 </td>
 				<td> <input  type="password"  name="userPass" > </td>
 			</tr>
 			
 			<!-- 
 			<tr>
-				<th  align=center class="npw">새로운 비밀번호 </th>
+				<td  align=center class="npw">새로운 비밀번호 </td>
 				<td> <input  type="password"  name="npwCk" value= ${edit.getUserPass() } ></td>
 			</tr>
 			<tr>
-				<th  align=center class="userPass"> 비밀번호 확인 </th>
+				<td  align=center class="userPass"> 비밀번호 확인 </td>
 				<td> <input  type="password"  name="npwCk" value= ${edit.getUserPass() } ></td>
 			</tr>
 		 -->
 		 
 		 
 			<tr>
-				<th  align=center class="userMail"> 이메일 </th>
+				<td  align=center class="userMail"> 이메일 </td>
 				<td> <input  type="userMail"  name="userMail" value= ${member.userMail } ></td>
 			</tr>
 			<tr>
-				<th  align=center class="arsName"> 배송지 </th>
+				<td  align=center class="arsName"> 배송지 </td>
 				<td> <a href= "/dest"><input type="button" class="button" value="배송지관리" /></a></td>
 			</tr>
 				<tr>
 			
 		</tr>
 		<td colspan=2  align=center> 
-        <b  class="underline-button"  id="modify_btn">수정 완료</b>
-    </div>
-      <div>
-        <b class="underline-button" id="cancel_btn">수정 취소</b>
+        <a  class="btn"  id="modify_btn">수정 완료</a>
+        <a class="btn" id="cancel_btn">수정 취소</a>
 					</div>
 					
 					

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="../header.jsp"%>     
+    
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -22,15 +24,15 @@
 <form action="/board/qnaReg" method="POST">
 	<div class="input_wrap" align=center>
 		<label>제목</label>
-		<br><br>
-		<input name="qTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;">
+    <br><br>		
+		<input name="qTitle" style="width: 550px, height: 20px;">
 		
 		</div>
 		   <br><br>
   <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="userName" style="height: 20px; border-bottom: black 1px solid;" readonly="readonly"  value="${list.userName}">
+		<input name="qWrt" style="height: 20px;" readonly="readonly"  value="${member.userName}">
 
 	</div>
   <br><br>
@@ -38,7 +40,7 @@
   <div class="input_wrap" align=center>
 		<label>내용</label>
     <br><br>
-		<textarea rows="30" cols="100" name="qContent" style="border: black 1px solid; border-radius: 3px;"></textarea>
+		<textarea rows="30" cols="100" name="qContent"></textarea>
 	</div>
   <br><br><br>
   <div class="btn_wrap" align=center>

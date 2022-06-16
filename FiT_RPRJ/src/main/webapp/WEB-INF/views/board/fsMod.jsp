@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-    
+<%@ include file="../header.jsp"%>      
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>수정 페이지</title>
 
 
 
@@ -28,24 +27,22 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <form id="modifyForm" action ="/board/modifyF" method="post">
 	<div class="input_wrap" align=center>
 	<input type="hidden" name="fBno" value='<c:out value="${pageInfo.fBno}"/>'>
-
+	<br><br>
 		<label>제목</label>
 		 <br><br>
-		<input name="fTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;"  value='<c:out value="${pageInfo.fTitle}"/>' >
+		<input name="fTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.fTitle}"/>' >
 	</div>
 	<br><br>
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="aId" style="height: 20px; border-bottom: black 1px solid;">
+		<input name="fWrt" style="height: 20px;" value='<c:out value="${pageInfo.fWrt}"/>' readonly>
 		</div>
  	 <br><br>
 		
 	<div class="input_wrap" align=center>
 		
-		<label>내용</label>
- 	 <br><br>
-		<textarea rows="30" cols="100" name="fContent" style="border: black 1px solid; border-radius: 3px;"><c:out value="${pageInfo.fContent}"/></textarea>
+		<textarea rows="30" cols="100" name="fContent" ><c:out value="${pageInfo.fContent}"/></textarea>
 	</div>
 	  <br><br><br>
 		<div class="btn_wrap" align=center>

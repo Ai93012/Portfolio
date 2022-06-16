@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="header.jsp"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/dist/css/mystyle.css">
+<link rel="stylesheet" href="../resources/css/mystyle.css">
 <title>마이페이지</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
 <br><br>
 <hr style="width: 70%; height: 1px; background-color: #111111; border: 0;">
 <br><br>
-<a href="board/qna"><button class="button">문의게시판</button></a>
+<a href="board/qnaList"><button class="button">문의게시판</button></a>
 &nbsp; &nbsp; &nbsp; &nbsp; 저희 FIT는 항상 열린 마음으로 고객님의 문의를 받고 있습니다.
 </body>
 <br><br>

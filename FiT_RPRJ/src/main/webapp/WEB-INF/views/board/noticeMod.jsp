@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../header.jsp"%>  
     
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/dist/regstyle.css">
+<link rel="stylesheet" href="../resources/css/regstyle.css">
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>수정 페이지</title>
 
 
 
@@ -28,24 +28,22 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 <form id="modifyForm" action ="/board/modifyN" method="post">
 	<div class="input_wrap" align=center>
 	<input type="hidden" name="nBno" value='<c:out value="${pageInfo.nBno}"/>'>
-
+	<br><br>
 		<label>제목</label>
 		 <br><br>
-		<input name="nTitle" style="width: 550px; height: 20px; border-bottom: black 1px solid;"  value='<c:out value="${pageInfo.nTitle}"/>' >
+		<input name="nTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.nTitle}"/>' >
 	</div>
 	<br><br>
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="aId" style="height: 20px; border-bottom: black 1px solid;">
+		<input name="nWrt" style="height: 20px;"value='<c:out value="${pageInfo.nContent}"/>' readonly>
 		</div>
  	 <br><br>
 		
 	<div class="input_wrap" align=center>
 		
-		<label>내용</label>
- 	 <br><br>
-		<textarea rows="30" cols="100" name="nContent" style="border: black 1px solid; border-radius: 3px;"><c:out value="${pageInfo.nContent}"/></textarea>
+		<textarea rows="30" cols="100" name="nContent" ><c:out value="${pageInfo.nContent}"/></textarea>
 	</div>
 	  <br><br><br>
 		<div class="btn_wrap" align=center>

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
 <head>
   <meta charset="UTF-8">
   <title>로그인 및 회원가입 페이지</title>
@@ -95,17 +94,6 @@
 <!-- partial -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
 integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-</script>
-<script>
-/* 로그인 버튼 클릭 메서드 */
- 
-$(".login_button").click(function(){
-	/*alert("로그인 버튼 작동");*/
-	/*로그인 메서드 서버 요청 */
-	$("#login_form").attr("action", "/member/loginForm");
-	$("#login_form").submit();	
-}); 
- 
 </script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>			
 <script>

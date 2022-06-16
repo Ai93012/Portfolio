@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+ <%@ include file="../header.jsp"%>  
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/dist/style3.css">    
+<link rel="stylesheet" href="../resources/css/style3.css">    
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +29,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 			<tr>
 				<td style="border-bottom: #111111 solid 1px;
-	padding: 5px 5px 25px;">${pageInfo.fReg} &nbsp; 조회수 ${pageInfo.fHit} &nbsp; 작성자 ${member.userName}</td>
+	padding: 5px 5px 25px;">${pageInfo.fReg} &nbsp; 조회수 ${pageInfo.fHit} &nbsp; 작성자 ${pageInfo.fWrt}</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
@@ -37,9 +38,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		</table>
 		<br><br>
     <div class="modify-button_wrap">
-				<a class="underline-button" id="modify_btn">수정</a> &nbsp; &nbsp;
-				<a class="underline-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
-				<a class="underline-button" id="list_btn">목록 페이지</a>
+				<a class="modify-button" id="modify_btn">수정</a> &nbsp; &nbsp;
+				<a class="modify-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
+				<a class="modify-button" id="list_btn">목록 페이지</a>
     </div>
 	  <form id="infoForm" action="/board/modify" method="get">
 		<input type="hidden" id="fBno" name="fBno" value='<c:out value="${pageInfo.fBno}"/>'>

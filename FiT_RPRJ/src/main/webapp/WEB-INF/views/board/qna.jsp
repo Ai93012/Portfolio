@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ include file="../header.jsp"%>  
+
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/css/dist/style3.css">    
+<link rel="stylesheet" href="../resources/css/style3.css">    
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +31,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 			<tr>
 				<td style="border-bottom: #111111 solid 1px;
-	padding: 5px 5px 25px;">${pageInfo.qReg} &nbsp; 조회수 ${pageInfo.qHit} &nbsp; 작성자 ${pageInfo.aId}</td>
+	padding: 5px 5px 25px;">${pageInfo.qReg} &nbsp; 조회수 ${pageInfo.qHit} &nbsp; 작성자 ${pageInfo.qWrt}</td>
 			</tr>
 			<tr>
 				<td colspan="3" style="border-bottom: #333333 solid 1px;
@@ -38,10 +40,24 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		</table>
 		<br><br>
     <div class="modify-button_wrap">
-				<a class="underline-button" id="modify_btn">수정</a> &nbsp; &nbsp;
-				<a class="underline-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
-				<a class="underline-button" id="list_btn">목록 페이지</a>
+				<a class="modify-button" id="modify_btn">수정</a> &nbsp; &nbsp;
+				<a class="modify-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
+				<a class="modify-button" id="list_btn">목록 페이지</a>
     </div>
+    <div class="reply_subject">
+    <br><br><br>
+    <h2>답변</h2>
+    </div>
+    <br>
+    <br>
+    
+    <c:if test="${member != null}">
+    <div class="reply_button_wrap">
+    	<button>답변 등록</button>
+    </div>
+    </c:if>
+    
+    
 	  <form id="infoForm" action="/board/modifyQ" method="get">
 		<input type="hidden" id="qBno" name="qBno" value='<c:out value="${pageInfo.qBno}"/>'>
 	  </form>
@@ -66,6 +82,23 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		form.attr("method", "post");
 		form.submit();
 	});
+	
+	
+	/*답변 달기 */
+	$(".reply_button_wrap").on("click", function(e){
+		e.preventDefault();
+		
+		const aId = '${member.userId}';
+		
+		let popUrl = "/regReply/" + userId;
+		console.log(popUrl);
+		let popOption = "width = 490px, height=490px, top=300px, left=300px, scrollbars=yes";
+		
+		windows.open(popUrl, "리뷰 쓰기", popOption);
+		
+		
+	});
+	
 </script>
 </body>
 </html>

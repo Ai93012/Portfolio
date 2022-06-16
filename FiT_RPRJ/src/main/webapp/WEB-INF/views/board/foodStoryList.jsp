@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-    
+<%@ include file="../header.jsp"%>  
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/dist/css/style.css">
+<link rel="stylesheet" href="../resources/css/style.css">
     
 <!DOCTYPE html>
 <html>
@@ -21,6 +21,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 </script>
 </head>
 <body>
+
 
 	<div id="wrap" align="center">
 		<h6>푸드스토리</h6>
@@ -43,14 +44,15 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 
 	
-		<c:forEach items="${list}" var="list">
+		<c:forEach items="${list}" var="list">	
+		
 				<td><c:out value="${list.fBno}"/></td>
 				<td>
-					<a class="move" href='/board/foodStory?fBno=<c:out value="${list.fBno}"/>'>
+					<a class="underline" href='/board/foodStory?fBno=<c:out value="${list.fBno}"/>'>
 						<c:out value="${list.fTitle}"/>
 					</a>
 				</td>
-				<td><c:out value="${member.userName}"/></td> 
+				<td><c:out value="${list.fWrt}"/></td> 
 				<td><c:out value="${list.fReg}"/></td>	
 				<td><c:out value="${list.fHit }"/></td>			
 			</tr>

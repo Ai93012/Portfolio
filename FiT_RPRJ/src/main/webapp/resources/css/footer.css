@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+}

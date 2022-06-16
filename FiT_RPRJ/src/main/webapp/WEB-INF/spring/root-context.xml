@@ -13,8 +13,8 @@
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:ORCL"></property>
          <!-- Oracle 11g 경우 value="jdbc:oracle:thin:@URL주소:1521:XE" -->
          <!-- Oracle 19  경우 value="jdbc:oracle:thin:@URL주소:1521:orcl" -->
-		<property name="username" value="YKK"></property>
-		<property name="password" value="0000"></property>
+		<property name="username" value="coco"></property>
+		<property name="password" value="coco"></property>
 		</bean>	
 	
 	<bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">

@@ -2,20 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../header.jsp"%>  
 <html>
 <head>
 <title>Home</title>
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/home.js"></script>
-<link rel="stylesheet" href="/resources/css/regstyle.css">
+<link rel="stylesheet" href="/resources/css/home.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
+	<link rel="stylesheet" href="/resources/css/regstyle.css">
 </head>
 <body>
-	<div id="wrapper">
+	<div id="wrapper" align="center">
 		<header>
 
 		</header>

@@ -2,11 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%@ include file="../header.jsp"%>  
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- my css -->
-<link rel="stylesheet" href="../resources/dist/css/style.css">
+<link rel="stylesheet" href="../resources/css/style.css">
     
 <!DOCTYPE html>
 <html>
@@ -22,6 +24,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 
 </head>
 <body>
+
 
 	<div id="wrap" align="center">
 		<h6>문의사항</h6>
@@ -40,14 +43,15 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 			</tr>
 		   </thead>	
 			  <c:forEach items="${list}" var="list">
+         
                 <td><c:out value="${list.qBno}"/></td>
                 <td>
-                	<a class="move" href='/board/qna?qBno=<c:out value="${list.qBno}"/>'>
+                	<a class="underline" href='/board/qna?qBno=<c:out value="${list.qBno}"/>'>
                 	<c:out value="${list.qTitle}"/>
                 	</a>
                 </td>
                 
-                <td><c:out value="${list.userName}"/></td>
+                <td><c:out value="${list.qWrt}"/></td>
                 <td><c:out value="${list.qReg}"/></td>
                 <td><c:out value="${list.qHit}"/></td>
             </tr>

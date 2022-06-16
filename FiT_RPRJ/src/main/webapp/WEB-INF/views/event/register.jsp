@@ -2,9 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../header.jsp"%>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<!-- my css -->
+<link rel="stylesheet" href="../resources/css/regstyle.css">
+
+
 <html>
 <head>
-<title>Home</title>
+
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/js/home.js"></script>
 <link rel="stylesheet" href="/resources/css/home.css">
@@ -17,35 +25,42 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<jsp:include page="../include/header.jsp"></jsp:include>
+		
 		</header>
-		<section>
+		  <br><br>
+		<section align=center>
 			<h1>이벤트 등록</h1>
 			<form role="form" action="/event/register" method="post" enctype="multipart/form-data">
 		  	<div class="form-group">
-		  	  <label>제목</label> <input class="form-control" name="title">
+		  	  <label>제목</label> <input class="form-control" name="title" required>
 		  	</div>
 		  	<div class="form-group">
-		  	  <label>내용</label>
-		  	  <textarea class="form-control" rows="3" name="content"></textarea>
+		  	  <label>작성자</label> 
+		  	  <input class="form-control" style= "height: 20px;"  readonly="readonly"  name="aid">
+		  	  
 		  	</div>
+		  	<div class="form-group">
+		  	<br>
+		  	  <label>내용</label>
+		  	    <br>
+		  	  <textarea class="form-control" rows="30" cols="100" name="content"></textarea>
+		  	</div>
+		  	<br>
 		  	<div class="form-group">
 		  	  <label>배너</label>
 		  	  <input type="file" name="uploadFile">
 		  	</div>
-		  	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" >
+		  	<br><br>
+		  	<input type="hidden" align="center" name="${_csrf.parameterName}" value="${_csrf.token}" >
 		  	
-		  	<div class="form-group">
-		  	  <label>작성자</label> <input class="form-control" name="aid">
-		  	  
-		  	</div>
-		  	<button type="submit" class="btn btn-default">Submit Button</button>
-		  	<button type="reset" class="btn btn-default">Reset Button</button>
+		  	
+		  	<button type="submit" class="btn btn-default">등록</button>
+		  	<button type="reset" class="btn btn-default">다시 쓰기</button>
 		  </form>
 			
 		</section>
 		<footer>
-			<jsp:include page="../include/footer.jsp"></jsp:include>
+		
 		</footer>
 	</div>
 </body>

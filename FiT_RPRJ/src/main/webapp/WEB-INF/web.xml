@@ -6,8 +6,14 @@
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+		<param-value>/WEB-INF/spring/root-context.xml
+		/WEB-INF/spring/security-context.xml</param-value>
 	</context-param>
+	
+	
+	
+	
+	
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
@@ -24,7 +30,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<multipart-config>
-			<location>C:\java\upload</location>
+			<location>C:\\java\\upload</location>
 			<max-file-size>20971520</max-file-size>
 			<max-request-size>41943040</max-request-size>
 			<file-size-threshold>20971520</file-size-threshold>
@@ -39,7 +45,8 @@
         <filter-name>encodingFilter</filter-name>
         <filter-class>
             org.springframework.web.filter.CharacterEncodingFilter
-        </filter-class>
+        </filter-class>       
+        
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>

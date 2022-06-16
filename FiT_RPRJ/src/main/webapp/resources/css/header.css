@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+#header_wrap{
+	position: relative;
+	height: 198px;
+}
+#logo_wrap{
+	position: absolute;
+	width: 1334px;
+	height: 141px;
+	left: 135px;
+	top: 34px;
+
+	background: #FFFFFF;
+}
+#submenu{
+	position: absolute;
+	width: 49px;
+	height: 48px;
+	left: 1150px;
+	top: 94px; 
+}
+#submenu ul {
+	list-style-type: none;
+	width: 300px;
+	height: 50px;
+}
+#submenu ul li {
+	float: left;
+	margin-left: 10px;
+}
+#gnb {
+	height: 90px;
+}
+#gnb ul{
+	height: 89px;
+	padding: 29px 0;
+	list-style-type: none;
+	border-bottom: 1px solid black;
+	
+}
+#gnb ul li {
+	float: left;
+	margin-left: 10px;
+	padding: 5px 10px;
+}
+
+
+/* login text */
+
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*, *:after, *:before {      /* 박스 사이징을 border-box로 설정 */
+    box-sizing: border-box; /* width=content+padding+border */
+}
+
+
+li {
+	float: left;
+	margin-left: 10px;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+}
+
+
+/* menu text*/
+
+
+h5 {
+	float: left;
+	margin-left: 10px;
+	padding: 5px 10px;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 39px;
+	color: #000000;
+}
+
+
+/* menu box */
+
+
+#gnb ul{
+	box-sizing: border-box;
+	position: absolute;
+	width: 1700px;
+	height: 90px;
+	left: 100px;
+	top: 198px;
+
+	border-bottom: 1px solid #000000;
+}
+
+.none {
+	text-decoration: none;
+	color: #000000;
+}
+
+.none:HOVER {
+	text-decoration: none;
+	color: #000000;
+}
