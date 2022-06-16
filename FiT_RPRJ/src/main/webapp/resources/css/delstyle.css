@@ -10,7 +10,7 @@ body {
     align: center;
     font-family: 'Gowun Dodum', sans-serif;
   }
-  
+
   .button {
     width: 140px;
     height: 45px;
@@ -28,14 +28,14 @@ body {
     cursor: pointer;
     outline: none;
     }
-  
+
   .button:hover {
     background-color: #2E9DE5;
     box-shadow: 0px 15px 20px rgba(46, 157, 229, 0.4);
     color: #fff;
     transform: translateY(-7px);
   }
-  
+
   .d-button {
     width: 140px;
     height: 45px;
@@ -53,7 +53,7 @@ body {
     cursor: pointer;
     outline: none;
     }
-  
+
   .d-button:hover {
     background-color: #E52E2E;
     box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
