@@ -20,7 +20,7 @@
 		
 		<section>
 			<h1>상품 상세 보기</h1>
-			<p>홈>전체상품>카페고리이용</p>
+			<p>홈>전체상품>카테고리이용</p>
 			<div id="s1">
 				<div id="s2">
 					<div class="left">
