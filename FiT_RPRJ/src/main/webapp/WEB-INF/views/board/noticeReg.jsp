@@ -26,7 +26,7 @@
 		
 		<label>제목</label>
     <br><br>		
-		<input name="nTitle" style="width: 550px, height: 20px;"/>
+		<input name="nTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;" value="${member.userName}" readonly />"/>
 		
 		</div>
 		   <br><br>
@@ -34,7 +34,7 @@
 		<label>작성자</label>
     <br><br>
   
-		<input name="nWrt" style="height: 20px;" value="${member.userName}" readonly />
+		<input name="nWrt" style="height: 20px; border-bottom: black 1px solid;" value="${member.userName}" readonly />" value="${member.userName}" readonly />
 
 	</div>
   <br><br>
