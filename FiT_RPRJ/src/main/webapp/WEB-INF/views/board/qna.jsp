@@ -40,9 +40,9 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		</table>
 		<br><br>
     <div class="modify-button_wrap">
-				<a class="modify-button" id="modify_btn">수정</a> &nbsp; &nbsp;
-				<a class="modify-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
-				<a class="modify-button" id="list_btn">목록 페이지</a>
+				<a class="underline-button" id="modify_btn">수정</a> &nbsp; &nbsp;
+				<a class="underline-button" id="delete_btn">삭제</a> &nbsp; &nbsp;
+				<a class="underline-button" id="list_btn">목록 페이지</a>
     </div>
     <div class="reply_subject">
     <br><br><br>
