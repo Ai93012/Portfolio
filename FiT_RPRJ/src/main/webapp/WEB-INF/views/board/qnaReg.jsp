@@ -25,7 +25,7 @@
 	<div class="input_wrap" align=center>
 		<label>제목</label>
     <br><br>		
-		<input name="qTitle" style="width: 550px, height: 20px;">
+		<input name="qTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;" value="${member.userName}" readonly />">
 		
 		</div>
 		   <br><br>
