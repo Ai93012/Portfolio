@@ -42,7 +42,7 @@
   <div class="input_wrap" align=center>
 		<label>내용</label>
     <br><br>
-		<textarea rows="30" cols="100" name="nContent"></textarea>
+		<textarea rows="30" cols="100" name="nContent" style="border: black 1px solid; border-radius: 3px;"></textarea>
 	</div>
   <br><br><br>
   <div class="btn_wrap" align=center>
