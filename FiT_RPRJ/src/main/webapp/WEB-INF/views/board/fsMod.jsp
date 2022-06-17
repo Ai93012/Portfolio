@@ -30,13 +30,13 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	<br><br>
 		<label>제목</label>
 		 <br><br>
-		<input name="fTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.fTitle}"/>' >
+		<input name="fTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;"  value='<c:out value="${pageInfo.fTitle}"/>' >
 	</div>
 	<br><br>
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="fWrt" style="height: 20px;" value='<c:out value="${pageInfo.fWrt}"/>' readonly>
+		<input name="fWrt" style="height: 20px; border-bottom: black 1px solid;" value='<c:out value="${pageInfo.fWrt}"/>' readonly>
 		</div>
  	 <br><br>
 		
