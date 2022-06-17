@@ -30,13 +30,13 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 	<br><br>
 		<label>제목</label>
 		 <br><br>
-		<input name="qTitle" style="width: 550px, height: 20px;"  value='<c:out value="${pageInfo.qTitle}"/>' >
+		<input name="qTitle" style="width: 550px, height: 20px; border-bottom: black 1px solid;" value="${member.userName}" readonly />"  value='<c:out value="${pageInfo.qTitle}"/>' >
 	</div>
 	<br><br>
 	 <div class="input_wrap" align=center>
 		<label>작성자</label>
     <br><br>
-		<input name="qWrt" style="height: 20px;" readonly="readonly" value='<c:out value="${pageInfo.qWrt}"/>' >
+		<input name="qWrt" style="height: 20px; border-bottom: black 1px solid;" value="${member.userName}" readonly />" readonly="readonly" value='<c:out value="${pageInfo.qWrt}"/>' >
 		</div>
  	 <br><br>
 		
