@@ -23,7 +23,7 @@
 		<div style="height: 100%">
 			<div id="a">
 				<select name="category" id="category">
-					<option value="">카페고리<option>
+					<option value="">카테고리<option>
 					<option value="europe">유럽</option>
 					<option value="asia">아시아</option>
 					<option value="america">남미</option>
