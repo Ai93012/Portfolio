@@ -43,7 +43,7 @@ integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30Wpbs
 		
 	<div class="input_wrap" align=center>
 		
-		<textarea rows="30" cols="100" name="nContent" ><c:out value="${pageInfo.nContent}"/></textarea>
+		<textarea rows="30" cols="100" name="nContent" style="border: black 1px solid; border-radius: 3px;"><c:out value="${pageInfo.nContent}"/></textarea>
 	</div>
 	  <br><br><br>
 		<div class="btn_wrap" align=center>
